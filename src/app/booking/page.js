@@ -220,24 +220,24 @@ function Page() {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("bookingData -->", bookingData);
-    // if (status === "authenticated") {
-    //   const response = await fetch("/api/bookings", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify({ ...bookingData, userId: session.user.id }),
-    //   });
-    //   const data = await response.json();
-    //   if (data.success) {
-    //     alert("Booking successful!");
-    //     router.push("/booking-history");
-    //   } else {
-    //     alert("Booking failed. Please try again.");
-    //   }
-    // } else {
-    //   router.push("/login");
-    //   return null;
-    // }
+    // console.log("bookingData -->", bookingData);
+    if (status === "authenticated") {
+      const response = await fetch("/api/bookings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...bookingData, userId: session.user.id }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        alert("Booking successful!");
+        router.push("/booking-history");
+      } else {
+        alert("Booking failed. Please try again.");
+      }
+    } else {
+      router.push("/login");
+      return null;
+    }
   };
 
   return (
