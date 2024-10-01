@@ -146,8 +146,8 @@ export default function HomeCarousel() {
         className="mySwiper"
       >
         {carouseldata.map((data) => (
-          <SwiperSlide>
-            <Banner key={data.id} img={data.img} />
+          <SwiperSlide key={data.id}>
+            <Banner img={data.img} />
           </SwiperSlide>
         ))}
       </Swiper>
