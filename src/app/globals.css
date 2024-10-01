@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -12,12 +12,23 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.custom-time-input::-webkit-datetime-edit,
+.custom-time-input::-webkit-inner-spin-button,
+.custom-time-input::-webkit-clear-button {
+  color: #9ca3af; /* Tailwind's gray-400 color */
+}
+
+.custom-time-input::-webkit-calendar-picker-indicator {
+  color: #9ca3af; /* Change the clock icon color */
+  opacity: 0.5; /* Ensure the icon is visible */
 }
 
 @layer utilities {
