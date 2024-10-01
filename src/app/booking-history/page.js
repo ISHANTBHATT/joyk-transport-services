@@ -79,6 +79,8 @@ export default function History() {
       if (session) {
         const response = await fetch("/api/bookings");
         const data = await response.json();
+        // const db = data.bookings.reverse();
+        // console.log("data booking -->", db);
         if (data.success) {
           setBookings(data.bookings);
         }
@@ -132,7 +134,7 @@ export default function History() {
                       </p>
                     </div>
                     <div className="mt-2 flex flex-col  text-sm text-gray-500 sm:mt-0">
-                      <p>Date: {new Date(booking.date).toLocaleString()}</p>
+                      <p>Date: {booking.time}</p>
                       {booking.returnTrip ? (
                         // <div className="mt-2 flex text-sm text-gray-500 sm:mt-0">
                         <p className="mt-2 sm:mt-0">
