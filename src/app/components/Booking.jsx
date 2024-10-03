@@ -388,6 +388,7 @@ function Booking({ bookingData, setBookingData }) {
       );
       setDestinationSuggestions(filteredDestinationSuggestions);
     }
+    // localStorage.setItem("bookingData", JSON.stringify(bookingData));
   };
   const handleSuggestionClick = (name, suggestion) => {
     setBookingData((prevState) => ({
@@ -406,8 +407,10 @@ function Booking({ bookingData, setBookingData }) {
     );
   }
   const handleSearch = () => {
+    localStorage.setItem("bookingData", JSON.stringify(bookingData));
     router.push("/booking");
   };
+  console.log("bookingData -->", bookingData);
 
   return (
     <motion.div
@@ -434,9 +437,7 @@ function Booking({ bookingData, setBookingData }) {
               setValue(newValue); // Update Datepicker value
               setBookingData((prevState) => ({
                 ...prevState,
-                date: newValue.startDate
-                  ? new Date(newValue.startDate).toISOString()
-                  : null, // Set formData date value from Datepicker
+                date: newValue.startDate ? new Date(newValue.startDate) : null,
               }));
             }}
             required={true}

@@ -7,19 +7,21 @@ import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import { FaEye } from "react-icons/fa";
 import { IoEyeOffSharp } from "react-icons/io5";
-import { SyncLoader } from "react-spinners";
+import { ClipLoader, SyncLoader } from "react-spinners";
 function Page() {
   const [email, setEmail] = useState("");
   const [showpassword, setShowpassword] = useState(false);
   const [password, setPassword] = useState("");
   const [isRegistering, setIsRegistering] = useState(false);
   const [error, setError] = useState("");
+  const [isloading, setIsloading] = useState(false);
   const router = useRouter();
   const { data: session, status } = useSession();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setIsloading(true);
     // if (isRegistering) {
     //   // Register
     //   const res = await fetch("/api/register", {
@@ -36,12 +38,14 @@ function Page() {
     //     alert(data.message || "Registration failed");
     //   }
     // } else {
+
     // Login
     const result = await signIn("credentials", {
       email,
       password,
       redirect: false,
     });
+    setIsloading(false);
     if (result.error) {
       setError("Invaild email or password");
       alert(result.error);
@@ -131,8 +135,16 @@ function Page() {
           </div>
           <div>
             <button className="mt-10 relative flex gap-2 h-[50px] w-full items-center justify-center overflow-hidden bg-black text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0  before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600 hover:before:h-56 hover:before:w-full rounded-lg">
-              <span className="relative z-10 ">Sign in</span>
-              <MdArrowOutward className="z-10 " />
+              {isloading ? (
+                <>
+                  <ClipLoader color="#ffffff" />
+                </>
+              ) : (
+                <>
+                  <span className="relative z-10 ">Sign in</span>
+                  <MdArrowOutward className="z-10 " />
+                </>
+              )}
             </button>
           </div>
           <div>

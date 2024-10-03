@@ -7,7 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import { FaEye } from "react-icons/fa";
 import { IoEyeOffSharp } from "react-icons/io5";
-import { SyncLoader } from "react-spinners";
+import { ClipLoader, SyncLoader } from "react-spinners";
 function Page() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -15,6 +15,7 @@ function Page() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   // const [isRegistering, setIsRegistering] = useState(false);
+  const [isloading, setIsloading] = useState(false);
   const [error, setError] = useState("");
   const router = useRouter();
   const { data: session, status } = useSession();
@@ -24,7 +25,7 @@ function Page() {
     setError("");
     // if (isRegistering) {
     // Register
-    console.log(password == confirmPassword);
+    // console.log(password == confirmPassword);
     if (password !== confirmPassword) {
       setError((prev) => ({
         ...prev,
@@ -32,12 +33,14 @@ function Page() {
       }));
       return;
     }
+    setIsloading(true);
     const res = await fetch("/api/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, email, password }),
     });
     const data = await res.json();
+
     if (data.success) {
       // If registration is successful, log in
       signIn("credentials", { email, password, callbackUrl: "/booking" });
@@ -45,6 +48,7 @@ function Page() {
       setError(data.message || "Registration failed");
       alert(data.message || "Registration failed");
     }
+    setIsloading(false);
     // }
   };
   if (session) {
@@ -139,7 +143,9 @@ function Page() {
           <div>
             <div
               className={`relative rounded-lg ${
-                error.passwordMismatch ? "border-red-500 border" : "border-none"
+                error.passwordMismatch
+                  ? "border-red-600 border-2"
+                  : "border-none"
               }`}
             >
               <input
@@ -174,8 +180,18 @@ function Page() {
           </div> */}
           <div>
             <button className="mt-10 relative flex gap-2 h-[50px] w-full items-center justify-center overflow-hidden bg-black text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0  before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600 hover:before:h-56 hover:before:w-full rounded-lg">
-              <span className="relative z-10 ">Creat Account</span>
-              <MdArrowOutward className="z-10 " />
+              {isloading ? (
+                <>
+                  <ClipLoader color="#ffffff" />
+                </>
+              ) : (
+                <>
+                  <span className="relative z-10 ">Creat Account</span>
+                  <MdArrowOutward className="z-10 " />
+                </>
+              )}
+              {/* <span className="relative z-10 ">Creat Account</span>
+              <MdArrowOutward className="z-10 " /> */}
             </button>
           </div>
           <div>

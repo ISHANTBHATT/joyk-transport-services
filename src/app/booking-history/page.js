@@ -96,7 +96,11 @@ export default function History() {
   }
 
   if (status === "unauthenticated") {
-    return <p>Access Denied</p>;
+    return (
+      <div className="flex justify-center">
+        <img src="/images/login.jpg" className="w-1/2" />
+      </div>
+    );
   }
 
   return (
@@ -124,7 +128,7 @@ export default function History() {
                   <div className="mt-2 sm:flex sm:justify-between">
                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
                       <p className="flex items-center text-sm text-gray-500">
-                        Price: 24$ {booking.destination}
+                        Price:{booking.price}$
                       </p>
                       <p className="flex items-center text-sm text-gray-500">
                         No of Cars: {booking.cars}
@@ -134,7 +138,12 @@ export default function History() {
                       </p>
                     </div>
                     <div className="mt-2 flex flex-col  text-sm text-gray-500 sm:mt-0">
-                      <p>Date: {booking.time}</p>
+                      <p>
+                        Pickup Date:{" "}
+                        {new Date(booking.date).toLocaleDateString()}
+                        <span>, Pickup Time: {booking.time}</span>
+                      </p>
+
                       {booking.returnTrip ? (
                         // <div className="mt-2 flex text-sm text-gray-500 sm:mt-0">
                         <p className="mt-2 sm:mt-0">

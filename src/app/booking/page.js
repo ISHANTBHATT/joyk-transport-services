@@ -160,12 +160,13 @@
 // export default Page;
 
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import Booking from "../components/Booking";
 import { FaCar } from "react-icons/fa";
 import { IoPeople } from "react-icons/io5";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { ClipLoader } from "react-spinners";
 
 function Page() {
   const [bookingData, setBookingData] = useState({
@@ -177,7 +178,9 @@ function Page() {
     time: "",
     returnTrip: false,
     returnDate: "",
+    price: "",
   });
+  const [isloading, setIsloading] = useState(false);
 
   const { data: session, status } = useSession();
   const router = useRouter();
@@ -190,6 +193,19 @@ function Page() {
     }
   }, []);
 
+  const calculatePrice = useMemo(() => {
+    let price = 23.99;
+    if (bookingData.returnTrip) {
+      price *= bookingData.cars;
+      price *= 2;
+      price = price * 0.9;
+      // price = price - price * 0.1;
+    } else {
+      price *= bookingData.cars;
+    }
+    bookingData.price = price.toFixed(2);
+    return price.toFixed(2);
+  }, [bookingData.returnTrip, bookingData.cars]);
   // Update localStorage whenever bookingData changes
   // useEffect(() => {
   //   if (Object.keys(bookingData).length > 0) {
@@ -220,7 +236,8 @@ function Page() {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log("bookingData -->", bookingData);
+    console.log("bookingData -->", bookingData);
+    setIsloading(true);
     if (status === "authenticated") {
       const response = await fetch("/api/bookings", {
         method: "POST",
@@ -238,8 +255,10 @@ function Page() {
       router.push("/login");
       return null;
     }
+    setIsloading(false);
+    localStorage.removeItem("bookingData");
   };
-
+  // console.log("bookingData -->", bookingData);
   return (
     <div className="w-full py-20 lg:py-40">
       <div className="relative w-full h-full flex justify-center">
@@ -353,13 +372,21 @@ function Page() {
             </div>
             <div className="flex">
               <p className="font-semibold w-full pt-4 text-center">
-                $ <span className="text-3xl">23</span>.99
+                $ <span className="text-3xl">{calculatePrice}</span>
               </p>
               <button
                 onClick={handleSubmit}
                 className="relative flex gap-2 h-[50px] w-full items-center justify-center bg-black text-white shadow-2xl rounded-lg"
               >
-                Book
+                {isloading ? (
+                  <>
+                    <ClipLoader color="#ffffff" />
+                  </>
+                ) : (
+                  <>
+                    <span className="">Book</span>
+                  </>
+                )}
               </button>
             </div>
           </div>

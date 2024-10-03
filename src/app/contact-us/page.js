@@ -14,7 +14,7 @@ function Page() {
         </p>
       </div>
       <div>
-        <div className="p-20">
+        <div className="p-10 md:p-20">
           <div className="flex gap-10">
             <img src="/images/office-icon.png" className="w-40 h-40" />
             <div className="flex flex-col gap-2 justify-center">
