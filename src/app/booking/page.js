@@ -258,7 +258,18 @@ function Page() {
     setIsloading(false);
     localStorage.removeItem("bookingData");
   };
-  // console.log("bookingData -->", bookingData);
+
+  const formatDateTimeLocal = (date) => {
+    const d = new Date(date);
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    const hours = String(d.getHours()).padStart(2, "0");
+    const minutes = String(d.getMinutes()).padStart(2, "0");
+    return `${year}-${month}-${day}T${hours}:${minutes}`;
+  };
+
+  // console.log("bookingData date -->", new Date(bookingData.date));
   return (
     <div className="w-full py-20 lg:py-40">
       <div className="relative w-full h-full flex justify-center">
@@ -364,6 +375,7 @@ function Page() {
                       name="returnDate"
                       value={bookingData.returnDate}
                       onChange={handleChange}
+                      min={formatDateTimeLocal(bookingData.date)}
                       required
                     />
                   </div>
@@ -376,7 +388,7 @@ function Page() {
               </p>
               <button
                 onClick={handleSubmit}
-                className="relative flex gap-2 h-[50px] w-full items-center justify-center bg-black text-white shadow-2xl rounded-lg"
+                className="relative flex gap-2 h-[50px] w-full items-center justify-center  overflow-hidden bg-black text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0  before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600 hover:before:h-56 hover:before:w-full rounded-lg"
               >
                 {isloading ? (
                   <>
@@ -384,7 +396,7 @@ function Page() {
                   </>
                 ) : (
                   <>
-                    <span className="">Book</span>
+                    <span className="relative z-10 ">Book</span>
                   </>
                 )}
               </button>

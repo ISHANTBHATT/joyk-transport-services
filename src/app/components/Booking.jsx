@@ -410,8 +410,9 @@ function Booking({ bookingData, setBookingData }) {
     localStorage.setItem("bookingData", JSON.stringify(bookingData));
     router.push("/booking");
   };
-  console.log("bookingData -->", bookingData);
-
+  // console.log("bookingData -->", bookingData);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
   return (
     <motion.div
       variants={fadeIn("up", 1.8)}
@@ -443,6 +444,7 @@ function Booking({ bookingData, setBookingData }) {
             required={true}
             showShortcuts={true}
             primaryColor={"orange"}
+            minDate={today}
             // theme={"light"}
             inputClassName="w-full rounded-md border lg:border-none px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500"
             toggleClassName="absolute right-0 h-full px-3 text-gray-400 focus:outline-none disabled:opacity-40 disabled:cursor-not-allowed"
