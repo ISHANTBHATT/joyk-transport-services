@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema({
-  username: {
+  name: {
     type: String,
-    required: [true, "Please provide an email"],
+    required: [true, "Please provide an name"],
   },
   email: {
     type: String,
@@ -13,6 +13,10 @@ const UserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, "Please provide a password"],
+  },
+  isVerified: {
+    type: Boolean,
+    default: false,
   },
 });
 

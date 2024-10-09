@@ -14,6 +14,7 @@ const BookingSchema = new mongoose.Schema({
   returnTrip: { type: Boolean, default: false },
   returnDate: { type: Date },
   price: { type: Number, required: true },
+  bookingConfirmed: { type: Boolean, default: false },
   createdAt: {
     type: Date,
     default: Date.now,

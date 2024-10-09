@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaMapMarkedAlt } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
@@ -8,8 +9,11 @@ import { CiLocationOn } from "react-icons/ci";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../../variants";
 
 function Footer() {
+  const [hasAnimated, setHasAnimated] = useState(false);
   return (
     <footer className="font-sans tracking-wide bg-black pt-10 pb-4 px-14 lg:px-40">
       <div className="flex flex-col lg:flex-row flex-1 gap-20">
@@ -26,7 +30,19 @@ function Footer() {
               Read more
             </a>
           </p> */}
-          <div className="flex flex-col lg:flex-row">
+          <motion.div
+            variants={fadeIn("up", 0.3)}
+            initial="hidden"
+            // whileInView="show"
+            animate={hasAnimated ? "show" : "hidden"}
+            exit="hidden"
+            onViewportEnter={() => {
+              if (!hasAnimated) {
+                setHasAnimated(true);
+              }
+            }}
+            className="flex flex-col lg:flex-row"
+          >
             <div className="flex justify-center lg:justify-normal">
               <img src="/images/logo1.jpeg" className="w-32 h-32" />
             </div>
@@ -42,9 +58,21 @@ function Footer() {
                 Read more
               </a> */}
             </p>
-          </div>
+          </motion.div>
 
-          <ul className="grid sm:grid-cols-3 mt-12 gap-6">
+          <motion.ul
+            variants={fadeIn("up", 0.5)}
+            initial="hidden"
+            // whileInView="show"
+            animate={hasAnimated ? "show" : "hidden"}
+            exit="hidden"
+            onViewportEnter={() => {
+              if (!hasAnimated) {
+                setHasAnimated(true);
+              }
+            }}
+            className="grid sm:grid-cols-3 mt-12 gap-6"
+          >
             <li className="flex items-center max-sm:mb-8">
               <div className="bg-[#343538] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
                 <CiLocationOn className="w-6 h-6 text-white" />
@@ -54,7 +82,7 @@ function Footer() {
                   Address
                 </span>
                 <span className="font-bold">
-                  184 Main Collins Street West Victoria 8007
+                  116 Cite Sonatel Zac Mbao, Dakar-Senegal
                 </span>
               </a>
             </li>
@@ -73,14 +101,13 @@ function Footer() {
                   />
                 </svg>
               </div>
-              <a
-                href="javascript:void(0)"
-                className="text-gray-100 text-sm ml-4"
-              >
+              <a href="" className="text-gray-100 text-sm ml-4">
                 <span className="block text-xl text-primary font-bold">
                   Call Our Office
                 </span>
-                <span className="font-bold">180-548-2588</span>
+                <span className="font-bold">+221-78 750 79 89</span>
+                <br />
+                <span className="font-bold">+221-33 870 67 85</span>
               </a>
             </li>
             <li className="flex items-center">
@@ -98,68 +125,68 @@ function Footer() {
                   />
                 </svg>
               </div>
-              <a
-                href="javascript:void(0)"
-                className="text-gray-100 text-sm ml-4"
-              >
+              <a href="" className="text-gray-100 text-sm ml-4">
                 <span className="block text-xl text-primary font-bold">
                   Mail
                 </span>
-                <span className="font-bold">info@example.com</span>
+                <span className="font-bold">joykmultiservices@gmail.com</span>
               </a>
             </li>
-          </ul>
+          </motion.ul>
         </div>
 
-        <div className="flex ">
+        <motion.div
+          variants={fadeIn("up", 0.3)}
+          initial="hidden"
+          // whileInView="show"
+          animate={hasAnimated ? "show" : "hidden"}
+          exit="hidden"
+          onViewportEnter={() => {
+            if (!hasAnimated) {
+              setHasAnimated(true);
+            }
+          }}
+          className="flex "
+        >
           <ul className="flex  mt-8 space-x-4">
             <li className="hover:bg-[#343538] h-10 w-10 rounded-full flex items-center justify-center shrink-0 hover:-translate-y-1 transition-transform duration-300">
-              <a href="javascript:void(0)">
+              <a href="">
                 <FaFacebookF className="text-white " />
               </a>
             </li>
             <li className="hover:bg-[#343538] h-10 w-10 rounded-full flex items-center justify-center shrink-0 hover:-translate-y-1 transition-transform duration-300">
-              <a href="javascript:void(0)">
+              <a href="">
                 <FaLinkedinIn className="text-white" />
               </a>
             </li>
             <li className="hover:bg-[#343538] h-10 w-10 rounded-full flex items-center justify-center shrink-0 hover:-translate-y-1 transition-transform duration-300">
-              <a href="javascript:void(0)">
+              <a href="">
                 <FaInstagram className="text-white" />
               </a>
             </li>
             <li className="hover:bg-[#343538] h-10 w-10 rounded-full flex items-center justify-center shrink-0 hover:-translate-y-1 transition-transform duration-300">
-              <a href="javascript:void(0)">
+              <a href="">
                 <FaXTwitter className="text-white" />
               </a>
             </li>
           </ul>
-        </div>
+        </motion.div>
       </div>
 
       <div className="lg:flex lg:item-center mt-12 border-t-[1px] border-gray-600 pt-2">
         <ul className="flex flex-wrap gap-4 md:gap-20">
           <li>
-            <a
-              href="javascript:void(0)"
-              className="text-gray-300 hover:text-gray-100 text-sm"
-            >
+            <a href="" className="text-gray-300 hover:text-gray-100 text-sm">
               Terms of Service
             </a>
           </li>
           <li>
-            <a
-              href="javascript:void(0)"
-              className="text-gray-300 hover:text-gray-100 text-sm"
-            >
+            <a href="" className="text-gray-300 hover:text-gray-100 text-sm">
               Privacy Policy
             </a>
           </li>
           <li>
-            <a
-              href="javascript:void(0)"
-              className="text-gray-300 hover:text-gray-100 text-sm"
-            >
+            <a href="" className="text-gray-300 hover:text-gray-100 text-sm">
               Security
             </a>
           </li>

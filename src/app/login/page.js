@@ -60,7 +60,11 @@ function Page() {
   }
 
   if (status === "loading") {
-    return <SyncLoader />;
+    return (
+      <div className="min-h-screen flex justify-center items-center">
+        <SyncLoader />
+      </div>
+    );
   }
 
   const handleGoogleLogin = () => {
