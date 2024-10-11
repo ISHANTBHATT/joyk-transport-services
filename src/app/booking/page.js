@@ -566,43 +566,43 @@ function Page() {
       return;
     }
 
-    // if (status === "authenticated") {
-    //   const response = await fetch("/api/bookings", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify({ ...bookingData, userId: session.user.id }),
-    //   });
+    if (status === "authenticated") {
+      const response = await fetch("/api/bookings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...bookingData, userId: session.user.id }),
+      });
 
-    //   const data = await response.json();
-    //   // console.log("bookingData -->", bookingData.price);
+      const data = await response.json();
+      // console.log("bookingData -->", bookingData.price);
 
-    //   if (data.success) {
-    //     // Send email after successful booking
-    //     const dataid = data.data._id;
-    //     await fetch("/api/send-email", {
-    //       method: "POST",
-    //       headers: { "Content-Type": "application/json" },
-    //       body: JSON.stringify({
-    //         dataid,
-    //         bookingData,
-    //         userEmail: session.user.email,
-    //         userName: session.user.name,
-    //       }),
-    //     });
-    //     alert("Booking successful! A confirmation email has been sent.");
-    //     router.push("/booking-history");
-    //   }
-    //   // if (data.success) {
-    //   //   alert("Booking successful!");
-    //   //   router.push("/booking-history");
-    //   // }
-    //   else {
-    //     alert("Booking failed. Please try again.");
-    //   }
-    // } else {
-    //   router.push("/login");
-    //   return null;
-    // }
+      if (data.success) {
+        // Send email after successful booking
+        const dataid = data.data._id;
+        await fetch("/api/send-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            dataid,
+            bookingData,
+            userEmail: session.user.email,
+            userName: session.user.name,
+          }),
+        });
+        alert("Booking successful! A confirmation email has been sent.");
+        router.push("/booking-history");
+      }
+      // if (data.success) {
+      //   alert("Booking successful!");
+      //   router.push("/booking-history");
+      // }
+      else {
+        alert("Booking failed. Please try again.");
+      }
+    } else {
+      router.push("/login");
+      return null;
+    }
 
     setIsloading(false);
     localStorage.removeItem("bookingData");
