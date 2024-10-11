@@ -669,7 +669,12 @@ function Page() {
               </div>
             </div>
             <div className="flex flex-col items-center">
-              <img src={`/images/${bookingData.vehicleType}.png`} />
+              {bookingData.vehicleType ? (
+                <img src={`/images/${bookingData.vehicleType}.png`} alt="" />
+              ) : (
+                <img src="/images/sedan.png" alt="" />
+              )}
+
               <select
                 name="vehicleType"
                 value={bookingData.vehicleType}
