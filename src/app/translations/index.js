@@ -1,0 +1,26 @@
+export const translations = {
+  en: {
+    home: "Home",
+    aboutUs: "About Us",
+    ourServices: "Our Services",
+    contact: "Contact",
+    bookVehicle: "Book Vehicle",
+    bookingHistory: "Booking History",
+    invoice: "Invoice",
+    login: "Log In",
+    signup: "Sign Up",
+    logout: "Logout",
+  },
+  fr: {
+    home: "Accueil",
+    aboutUs: "À propos de nous",
+    ourServices: "Nos services",
+    contact: "Contact",
+    bookVehicle: "Réserver un véhicule",
+    bookingHistory: "Historique des réservations",
+    invoice: "Facture",
+    login: "Se connecter",
+    signup: "S'inscrire",
+    logout: "Se déconnecter",
+  },
+};

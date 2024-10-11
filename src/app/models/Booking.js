@@ -13,6 +13,7 @@ const BookingSchema = new mongoose.Schema({
   cars: { type: Number, default: 1 },
   returnTrip: { type: Boolean, default: false },
   returnDate: { type: Date },
+  returnTime: { type: String },
   price: { type: Number, required: true },
   bookingConfirmed: { type: Boolean, default: false },
   createdAt: {

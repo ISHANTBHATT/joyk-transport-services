@@ -19,9 +19,9 @@ function Page() {
             <img src="/images/office-icon.png" className="w-40 h-40" />
             <div className="flex flex-col gap-2 justify-center">
               <p className="font-semibold">Senegal Office</p>
-              <p>PO Box 16122 Collins Street West Victoria 8007 Australia</p>
-              <p>+32 2 512 08 15</p>
-              <p>office@email.com</p>
+              <p>116 Cite Sonatel Zac Mbao, Dakar-Senegal</p>
+              <p>+221-78 750 79 89</p>
+              <p>joykmultiservices@gmail.com</p>
             </div>
           </div>
           <div></div>

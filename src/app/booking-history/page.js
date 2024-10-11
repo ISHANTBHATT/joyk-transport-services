@@ -93,7 +93,8 @@ export default function History() {
                           <div className="mt-2 flex flex-col  text-sm text-gray-500 sm:mt-0">
                             <p>
                               Pickup Date:{" "}
-                              {new Date(booking.date).toLocaleDateString()}
+                              {new Date(booking.date).toDateString()}
+                              {/* {new Date(booking.date).toLocaleDateString()} */}
                               <span>, Pickup Time: {booking.time}</span>
                             </p>
 
@@ -101,7 +102,39 @@ export default function History() {
                               // <div className="mt-2 flex text-sm text-gray-500 sm:mt-0">
                               <p className="mt-2 sm:mt-0">
                                 Return Date:{" "}
-                                {new Date(booking.returnDate).toLocaleString()}
+                                {new Date(booking.returnDate).toDateString()},{" "}
+                                {booking.returnTime}
+                                {/* <br />
+                                {new Date(booking.returnDate).toLocaleString(
+                                  "en-US",
+                                  { timeZone: "UTC" }
+                                )} */}
+                                {/* {new Date(booking.returnDate).toDateString() +
+                                  ", " +
+                                  new Date(
+                                    booking.returnDate
+                                  ).toLocaleTimeString()} */}
+                                {/* {new Date(booking.returnDate).toLocaleString()} */}
+                                {/* <p className="mt-2 sm:mt-0">
+                                  Return Date:{" "}
+                                  {new Date(booking.returnDate).toDateString(
+                                    "en-US",
+                                    { timeZone: "UTC" }
+                                  ) +
+                                    ", " +
+                                    new Date(
+                                      booking.returnDate
+                                    ).toLocaleTimeString("en-US", {
+                                      hour12: false,
+                                    })}
+                                  {new Date(booking.returnDate)
+                                    .toISOString()
+                                    .split("T")[0] +
+                                    ", " +
+                                    new Date(
+                                      booking.returnDate
+                                    ).toLocaleTimeString("en-GB")}
+                                </p> */}
                               </p> // </div>
                             ) : (
                               <></>

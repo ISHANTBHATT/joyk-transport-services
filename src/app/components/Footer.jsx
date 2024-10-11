@@ -15,7 +15,7 @@ import { fadeIn } from "../../../variants";
 function Footer() {
   const [hasAnimated, setHasAnimated] = useState(false);
   return (
-    <footer className="font-sans tracking-wide bg-black pt-10 pb-4 px-14 lg:px-40">
+    <footer className="font-sans tracking-wide bg-black pt-10 pb-4 px-14 lg:px-20 xl:px-40">
       <div className="flex flex-col lg:flex-row flex-1 gap-20">
         <div>
           {/* <h4 className="text-gray-100 font-bold text-lg">About Us</h4>
@@ -71,7 +71,7 @@ function Footer() {
                 setHasAnimated(true);
               }
             }}
-            className="grid sm:grid-cols-3 mt-12 gap-6"
+            className="grid md:grid-cols-3 mt-12 gap-6"
           >
             <li className="flex items-center max-sm:mb-8">
               <div className="bg-[#343538] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
@@ -106,8 +106,6 @@ function Footer() {
                   Call Our Office
                 </span>
                 <span className="font-bold">+221-78 750 79 89</span>
-                <br />
-                <span className="font-bold">+221-33 870 67 85</span>
               </a>
             </li>
             <li className="flex items-center">
