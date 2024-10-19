@@ -5,11 +5,9 @@ import Booking from "./Booking";
 import Info from "./Info";
 import VerticalTabs from "./VerticalTabs";
 import Faq from "./Faq";
-import Testimonials from "./Testimonials";
+import Testimonials from "./Testimonial";
 import City from "./City";
 import CarBanner from "./CarBanner";
-import Footer from "./Footer";
-import Test from "./Test";
 
 function HomePage() {
   // const [bookingData, setBookingData] = useState(() => {
@@ -42,6 +40,9 @@ function HomePage() {
     time: "",
     returnTrip: false,
     returnDate: "",
+    returnTime: "",
+    price: "",
+    vehicleType: "",
   });
 
   // useEffect(() => {
@@ -69,12 +70,10 @@ function HomePage() {
       </div>
       <Info />
       <VerticalTabs />
-      {/* <Testimonials /> */}
       <City />
+      <Testimonials />
       <Faq />
-      <CarBanner />
-      {/* <Test /> */}
-      {/* <Footer /> */}
+      {/* <CarBanner /> */}
     </div>
   );
 }

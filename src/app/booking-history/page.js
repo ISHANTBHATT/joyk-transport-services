@@ -4,10 +4,12 @@ import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { SyncLoader } from "react-spinners";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function History() {
   const [bookings, setBookings] = useState([]);
   const { data: session, status } = useSession();
+  const router = useRouter();
 
   useEffect(() => {
     const fetchBookings = async () => {
@@ -35,9 +37,10 @@ export default function History() {
   }
 
   if (status === "unauthenticated") {
+    router.push("/login");
     return (
-      <div className="flex justify-center">
-        <img src="/images/login.jpg" className="w-1/2" />
+      <div className="flex justify-center items-center min-h-screen">
+        <SyncLoader />
       </div>
     );
   }
@@ -104,37 +107,6 @@ export default function History() {
                                 Return Date:{" "}
                                 {new Date(booking.returnDate).toDateString()},{" "}
                                 {booking.returnTime}
-                                {/* <br />
-                                {new Date(booking.returnDate).toLocaleString(
-                                  "en-US",
-                                  { timeZone: "UTC" }
-                                )} */}
-                                {/* {new Date(booking.returnDate).toDateString() +
-                                  ", " +
-                                  new Date(
-                                    booking.returnDate
-                                  ).toLocaleTimeString()} */}
-                                {/* {new Date(booking.returnDate).toLocaleString()} */}
-                                {/* <p className="mt-2 sm:mt-0">
-                                  Return Date:{" "}
-                                  {new Date(booking.returnDate).toDateString(
-                                    "en-US",
-                                    { timeZone: "UTC" }
-                                  ) +
-                                    ", " +
-                                    new Date(
-                                      booking.returnDate
-                                    ).toLocaleTimeString("en-US", {
-                                      hour12: false,
-                                    })}
-                                  {new Date(booking.returnDate)
-                                    .toISOString()
-                                    .split("T")[0] +
-                                    ", " +
-                                    new Date(
-                                      booking.returnDate
-                                    ).toLocaleTimeString("en-GB")}
-                                </p> */}
                               </p> // </div>
                             ) : (
                               <></>
@@ -163,7 +135,7 @@ export default function History() {
               </>
             ) : (
               <div className="flex justify-center">
-                <img src="/images/nodata.jpg" className="w-[600px] h-[600px]" />
+                <img src="/images/nodata2.jpg" className="" />
               </div>
             )}
           </ul>

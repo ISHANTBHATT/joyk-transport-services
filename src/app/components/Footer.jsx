@@ -43,14 +43,15 @@ function Footer() {
             }}
             className="flex flex-col lg:flex-row"
           >
-            <div className="flex justify-center lg:justify-normal">
+            <div className="w-full flex justify-center lg:justify-normal">
               <img src="/images/logo1.jpeg" className="w-32 h-32" />
             </div>
 
             <p className="text-sm mt-6 text-gray-300 lg:px-10 text-justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              gravida, mi eu pulvinar cursus, sem elit interdum mauris dipiscing
-              elit.
+              We specialize in offering reliable and convenient cab services for
+              seamless travel between the Blaise Diagne International Airport,
+              Senegal, and any city in Senegal, as well as from any city in
+              Senegal to the Blaise Diagne International Airport, Senegal
               {/* <a
                 href="javascript:void(0)"
                 className="text-sm font-semibold text-[#007bff]"
@@ -183,11 +184,11 @@ function Footer() {
               Privacy Policy
             </a>
           </li>
-          <li>
+          {/* <li>
             <a href="" className="text-gray-300 hover:text-gray-100 text-sm">
               Security
             </a>
-          </li>
+          </li> */}
         </ul>
 
         <p className="text-sm text-gray-300 lg:ml-auto max-lg:mt-6">

@@ -16,6 +16,7 @@ const BookingSchema = new mongoose.Schema({
   returnTime: { type: String },
   price: { type: Number, required: true },
   bookingConfirmed: { type: Boolean, default: false },
+  vehicleType: { type: String, required: true },
   createdAt: {
     type: Date,
     default: Date.now,

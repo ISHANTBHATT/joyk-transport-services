@@ -161,6 +161,9 @@ export async function GET(request) {
                    booking.date
                  ).toLocaleDateString()}</li>
                  <li><strong>Time:</strong> ${booking.time}</li>
+                 <li><strong>Vehicle Type:</strong> ${
+                   booking.vehicleType
+                 }</li>   
                  <li><strong>Price:</strong> $${booking.price}</li>
                          ${
                            booking.returnTrip
@@ -173,15 +176,19 @@ export async function GET(request) {
                                }</li>`
                              : ""
                          }
+   
                </ul>
+               <p><strong>Payment can be made after the ride via Cash or by Wave transfer or OrangeMoney transfer.</strong></p>
                <p>Thank you for choosing us!</p>`,
     });
-
-    return NextResponse.json({
-      success: true,
-      message: "Booking confirmed and email sent to the user",
-      booking,
-    });
+    return NextResponse.redirect(
+      new URL(`/success?bookingId=${bookingId}`, request.url)
+    );
+    // return NextResponse.json({
+    //   success: true,
+    //   message: "Booking confirmed and email sent to the user",
+    //   booking,
+    // });
   } catch (error) {
     console.error("Error confirming booking:", error);
     return NextResponse.json(

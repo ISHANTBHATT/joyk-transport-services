@@ -357,7 +357,7 @@ function Booking({ bookingData, setBookingData }) {
   const { data: session, status } = useSession();
   // const date = new Date(bookingData.date);
   // const inputdate = date.toISOString().split("T")[0];
-  // console.log("date -->", inputdate);
+  // console.log("session phone", session.user.phone);
   const [value, setValue] = useState({
     startDate: bookingData.date ? new Date(bookingData.date) : null,
     endDate: bookingData.date ? new Date(bookingData.date) : null,

@@ -13,18 +13,11 @@ function Banner({ key, title, img, desc }) {
   }, [img]);
 
   return (
-    <section
-      className="h-[60vh] lg:h-screen relative flex md:justify-center"
-      id="home"
-    >
+    <section className="h-[60vh] lg:h-screen relative flex " id="home">
       {isLoading && (
-        // <div className="absolute inset-0 flex justify-center items-center z-10">
-        //   <div className="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-14 w-14"></div>
-        // </div>
         <div className="absolute inset-0 flex justify-center items-center z-10">
           <SyncLoader />
         </div>
-        // <SyncLoader />
       )}
       <div
         key={img}
@@ -52,7 +45,7 @@ function Banner({ key, title, img, desc }) {
         alt=""
         className="w-full h-full object-cover absolute top-0 left-0"
       /> */}
-      <div className="px-4 lg:px-4  py-0 lg:py-20 flex-1 flex flex-col z-[1] items-center justify-center ml-10 md:ml-40">
+      <div className="px-4  w-full sm:w-2/3 lg:w-1/2 py-0 lg:py-20 flex flex-col z-[1] items-center justify-center ml-10 md:ml-40">
         <motion.p
           key={key}
           variants={fadeIn("up", 1.4)}
@@ -64,9 +57,10 @@ function Banner({ key, title, img, desc }) {
               setHasAnimated(true);
             }
           }}
-          className="text-sm lg:text-base  text-white w-full font-harlow"
+          className="text-4xl md:text-5xl font-bold  text-white w-full font-harlow mt-32 lg:mt-10"
         >
-          Where Would You Like To Go?
+          {title}
+          {/* Where Would You Like To Go? */}
         </motion.p>
         {/* <p
           key={title}
@@ -90,11 +84,12 @@ function Banner({ key, title, img, desc }) {
               setHasAnimated(true);
             }
           }}
-          className="text-[30px]  lg:text-[50px] text-textColor font-bold text-left text-white w-full"
+          className="mt-6 text-sm  lg:text-lg text-textColor text-left text-white w-full"
         >
-          Your Personal
+          {desc}
+          {/* Your Personal
           <br />
-          Chauffeur Services
+          Chauffeur Services */}
         </motion.p>
       </div>
     </section>

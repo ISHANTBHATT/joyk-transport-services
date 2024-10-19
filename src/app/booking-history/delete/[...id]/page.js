@@ -86,26 +86,67 @@
 // export default Delete;
 
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { MdDelete } from "react-icons/md";
-
+import { useSession } from "next-auth/react";
+import { SyncLoader, ClipLoader } from "react-spinners";
 function Delete() {
+  const [booking, setBooking] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [deleteLoading, setDeleteLoading] = useState(false);
+  const [error, setError] = useState(null);
   const router = useRouter();
   const { id } = useParams(); // Ensure 'id' is retrieved correctly
+  const { data: session, status } = useSession();
+
+  useEffect(() => {
+    async function fetchBookingDetails() {
+      setIsLoading(true);
+      try {
+        const response = await fetch(`/api/bookings/${id}`);
+        const data = await response.json();
+        if (data.success) {
+          setBooking(data.booking);
+        } else {
+          setError("Failed to fetch booking details");
+        }
+      } catch (error) {
+        console.error("Error fetching booking details:", error);
+        setError("An error occurred while fetching booking details");
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    if (id) {
+      fetchBookingDetails();
+    }
+  }, [id]);
 
   function goback() {
     router.push("/booking-history");
   }
 
   async function deletebooking() {
+    setDeleteLoading(true);
     try {
       const response = await fetch(`/api/bookings/${id}`, {
         method: "DELETE",
       });
+      const data = await response.json();
+      if (data.success) {
+        await fetch("/api/cancel-mail", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            booking,
+            userEmail: session.user.email,
+            userName: session.user.name,
+            phone: session.user.phone,
+          }),
+        });
 
-      if (response.ok) {
-        // Booking deleted successfully
         router.push("/booking-history");
       } else {
         // Handle error
@@ -113,7 +154,21 @@ function Delete() {
       }
     } catch (error) {
       console.error("Error deleting booking:", error);
+      setError("An error occurred while deleting the booking");
     }
+    setDeleteLoading(false);
+  }
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <SyncLoader />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <div className="text-center mt-8 text-red-500">{error}</div>;
   }
 
   return (
@@ -137,7 +192,15 @@ function Delete() {
               onClick={deletebooking}
               className="w-[120px] h-[50px] bg-[#7b57ff] transition duration-200 border-none text-gray-100 cursor-pointer font-semibold text-base rounded-full hover:bg-[#9173ff]"
             >
-              Confirm
+              {deleteLoading ? (
+                <>
+                  <ClipLoader color="#ffffff" />
+                </>
+              ) : (
+                <>
+                  <span className="relative z-10 ">Confirm</span>
+                </>
+              )}
             </button>
             <button
               onClick={goback}

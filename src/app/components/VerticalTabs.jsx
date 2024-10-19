@@ -443,12 +443,11 @@ const VerticalTabs = () => {
   const steps = [
     {
       id: 1,
-      title: "Create Your Route",
-      description:
-        "Enter your pickup & dropoff locations or the number of hours you wish to book a car and driver for",
+      title: "Book Your Ride",
+      description: "Select Your Pickup and Drop Location ",
       icon: (
         <svg
-          className="w-3.5 h-3.5 text-green-500 dark:text-green-400"
+          className="w-3.5 h-3.5 text-green-500"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -466,9 +465,9 @@ const VerticalTabs = () => {
     },
     {
       id: 2,
-      title: "Choose Vehicle For You",
+      title: "Signup / Sign In",
       description:
-        "On the day of your ride, you will receive two email and SMS updates - one informing you that.",
+        "If you're a new user, sign up by entering your basic details. If you're an existing user, please log in with your credentials",
       icon: (
         <svg
           className="w-3.5 h-3.5 text-gray-500 dark:text-gray-400"
@@ -483,9 +482,26 @@ const VerticalTabs = () => {
     },
     {
       id: 3,
-      title: "Enjoy The Journey",
+      title: "Search your vehicle",
       description:
-        "After your ride has taken place, we would appreciate it if you could rate your car and driver.",
+        "As per the Number of passengers and your comfort, you can select the vehicle We offer three types of vehicles Sadan, 4*4, Van",
+      icon: (
+        <svg
+          className="w-3.5 h-3.5 text-gray-500 dark:text-gray-400"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 18 20"
+        >
+          <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z" />
+        </svg>
+      ),
+    },
+    {
+      id: 4,
+      title: "Enjoy your Ride!",
+      description:
+        "Sit back, relax, and let us take you there and feel free to reach out if you need anything during your ride (CONTACT US -+221-78 750 79 89)",
       icon: (
         <svg
           className="w-3.5 h-3.5 text-gray-500 dark:text-gray-400"
@@ -538,7 +554,7 @@ const VerticalTabs = () => {
 
   return (
     <div
-      className="py-40 p-8 lg:ps-40 bg-primary text-white"
+      className="py-40 p-8 lg:ps-40 bg-test2 text-white"
       style={{
         backgroundImage: 'url("/images/line.png")',
         backgroundSize: "cover",
@@ -577,7 +593,7 @@ const VerticalTabs = () => {
           {steps.map((step) => (
             <li
               key={step.id}
-              className="mb-10 ms-6 cursor-pointer"
+              className="mb-6 ms-6 cursor-pointer"
               onClick={() => changeStep(step.id)}
             >
               <span
@@ -588,15 +604,15 @@ const VerticalTabs = () => {
                 {step.icon}
               </span>
               <h3
-                className={`font-medium leading-tight text-xl ${
-                  activeStep === step.id ? "text-white" : "text-[#ffb999]"
+                className={`font-medium leading-tight text-2xl ${
+                  activeStep === step.id ? "text-white" : "text-neutral-500"
                 }`}
               >
                 {step.title}
               </h3>
               <p
-                className={`text-lg py-6 ${
-                  activeStep === step.id ? "text-white" : "text-[#ffb999]"
+                className={`text-base py-4 ${
+                  activeStep === step.id ? "text-white" : "text-neutral-500"
                 }`}
               >
                 {step.description}

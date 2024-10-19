@@ -28,6 +28,7 @@ export const authOptions = {
             id: user._id.toString(),
             email: user.email,
             name: user.name,
+            phone: user.phone.toString(),
           };
         }
         return null;
@@ -40,12 +41,14 @@ export const authOptions = {
       if (user) {
         token.id = user.id;
         token.name = user.name;
+        token.phone = user.phone;
       }
       return token;
     },
     async session({ session, token }) {
       session.user.id = token.id;
       session.user.name = token.name;
+      session.user.phone = token.phone;
       return session;
     },
   },

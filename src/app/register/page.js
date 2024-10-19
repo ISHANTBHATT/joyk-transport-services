@@ -252,6 +252,7 @@ function Page() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [showpassword, setShowpassword] = useState(false);
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isloading, setIsloading] = useState(false);
@@ -319,6 +320,7 @@ function Page() {
           name,
           email,
           password,
+          phone,
           verificationCode,
         }),
       });
@@ -411,6 +413,25 @@ function Page() {
               </label>
             </div>
           </div>
+          <div>
+            <div className="relative">
+              <input
+                type="tel"
+                id="telephone"
+                className="peer p-4 w-full bg-gray-100 border-transparent rounded-lg text-sm placeholder:text-transparent focus:outline-none focus:ring-1 focus:border-orange-500 focus:ring-orange-500 disabled:opacity-50 disabled:pointer-events-none focus:pt-6 focus:pb-2 [&:not(:placeholder-shown)]:pt-6 [&:not(:placeholder-shown)]:pb-2 autofill:pt-6 autofill:pb-2"
+                placeholder=""
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
+              />
+              <label
+                htmlFor="telephone"
+                className="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0]  peer-disabled:opacity-50 peer-disabled:pointer-events-none peer-focus:scale-90 peer-focus:translate-x-0.5 peer-focus:-translate-y-1.5 peer-focus:text-gray-500  peer-[:not(:placeholder-shown)]:scale-90 peer-[:not(:placeholder-shown)]:translate-x-0.5 peer-[:not(:placeholder-shown)]:-translate-y-1.5 peer-[:not(:placeholder-shown)]:text-gray-500"
+              >
+                Phone Number
+              </label>
+            </div>
+          </div>
           {!verificationSent && (
             <div>
               <button
@@ -469,7 +490,7 @@ function Page() {
                     onChange={(e) => setVerificationCode(e.target.value)}
                   />
                   <label
-                    htmlFor="email"
+                    htmlFor="verificationCode"
                     className="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0]  peer-disabled:opacity-50 peer-disabled:pointer-events-none peer-focus:scale-90 peer-focus:translate-x-0.5 peer-focus:-translate-y-1.5 peer-focus:text-gray-500  peer-[:not(:placeholder-shown)]:scale-90 peer-[:not(:placeholder-shown)]:translate-x-0.5 peer-[:not(:placeholder-shown)]:-translate-y-1.5 peer-[:not(:placeholder-shown)]:text-gray-500"
                   >
                     Verification Code

@@ -1,28 +1,30 @@
 "use client";
 import React, { useState } from "react";
-import { MdVerifiedUser } from "react-icons/md";
-import { FaSackDollar } from "react-icons/fa6";
+// import { MdVerifiedUser } from "react-icons/md";
+// import { FaSackDollar } from "react-icons/fa6";
+import { TbClock24 } from "react-icons/tb";
+import { FaMoneyCheckDollar } from "react-icons/fa6";
 import { FaCar } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../variants";
 const cardData = [
   {
     id: 1,
-    Icon: MdVerifiedUser,
-    title: "Safety First",
-    desc: "Both you and your shipments will travel with professional drivers. Always with the highest quality standards.",
+    Icon: TbClock24,
+    title: "24 Hours Availability",
+    desc: "Experience the convenience of our services available 24/7, ensuring you can access reliable transportation whenever you need it.",
   },
   {
     id: 2,
-    Icon: FaSackDollar,
-    title: "Prices With No Surprises",
-    desc: "Both you and your shipments will travel with professional drivers. Always with the highest quality standards.",
+    Icon: FaMoneyCheckDollar,
+    title: "Fixed Fares",
+    desc: "Enjoy peace of mind with our transparent pricing! We charge the fixed fare from any location in Senegal to the Blaise Diagne International Airport, Senegal, and vice versa.",
   },
   {
     id: 3,
     Icon: FaCar,
-    title: "Private Travel Solutions",
-    desc: "Both you and your shipments will travel with professional drivers. Always with the highest quality standards.",
+    title: "Comfortable Vehicles",
+    desc: "Pick from our three types of cabs, crafted to suit your needs and ensure a comfortable and smooth ride. We prioritise your comfort every time!",
   },
 ];
 function Info() {
@@ -41,7 +43,7 @@ function Info() {
         }}
         className="text-center text-3xl md:text-4xl lg:text-5xl text-gray-700 font-medium flex items-center justify-center"
       >
-        Make Your Trip Your Way With Us
+        Discover What Sets Us Apart
       </motion.p>
       <motion.div
         variants={fadeIn("up", 0.3)}
@@ -60,7 +62,7 @@ function Info() {
         ))}
       </motion.div>
       <div
-        className="bg-[#E95440] w-full p-4 md:p-10 xl:p-20 rounded-md flex flex-col md:flex-row gap-8 md:gap-0 text-white text-2xl sm:text-4xl"
+        className="bg-test2 w-full p-4 md:p-10 xl:p-20 rounded-md flex flex-col md:flex-row gap-8 md:gap-0 text-white text-2xl sm:text-4xl"
         style={{
           backgroundImage: 'url("/images/bg-showcase.png")',
           backgroundSize: "cover",
@@ -77,10 +79,10 @@ function Info() {
               setHasAnimated(true);
             }
           }}
-          className="w-full md:w-3/5 "
+          className="w-full md:w-1/2 "
         >
           <p className="text-3xl xl:text-5xl text-center md:text-left">
-            Showcase some impressive numbers.
+            Spotlight Our Metrics
           </p>
         </motion.div>
         <motion.div
@@ -101,7 +103,7 @@ function Info() {
           </div>
           <div className="flex-col">
             <p>97</p>
-            <p className="text-sm sm:text-xl">Awards</p>
+            <p className="text-sm sm:text-xl">Chauffeur</p>
           </div>
           <div className="flex-col">
             <p>13K</p>

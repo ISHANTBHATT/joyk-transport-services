@@ -1,0 +1,12 @@
+{
+    "home": "Accueil",
+    "aboutUs": "À propos de nous",
+    "ourServices": "Nos services",
+    "contact": "Contact",
+    "bookVehicle": "Réserver un véhicule",
+    "bookingHistory": "Historique des réservations",
+    "invoice": "Facture",
+    "login": "Se connecter",
+    "signup": "S'inscrire",
+    "logout": "Se déconnecter"
+}

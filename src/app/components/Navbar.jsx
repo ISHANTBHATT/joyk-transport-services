@@ -623,10 +623,15 @@ export default function Header() {
                 </Link>
               </li>
               <li className="relative group">
-                <Link href="/about">
+                <Link href="/about-us">
                   <p className="text-black hover:text-primary">{t.aboutUs}</p>
                 </Link>
                 {/* Submenu */}
+              </li>
+              <li className="relative group">
+                {/* <Link href="/"> */}
+                <p className="text-black hover:text-primary">{t.ourServices}</p>
+                {/* </Link> */}
                 <ul className="absolute left-0 pt-6 hidden group-hover:block text-white py-2 w-80">
                   <li className="bg-black">
                     <Link href="/booking">
@@ -642,21 +647,14 @@ export default function Header() {
                       </p>
                     </Link>
                   </li>
-                  <li className="bg-black">
+                  {/* <li className="bg-black">
                     <Link href="/invoice">
                       <p className="block px-2 py-2 hover:bg-[#2f3134] hover:text-primary">
                         {t.invoice}
                       </p>
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
-              </li>
-              <li>
-                <Link href="/our-service">
-                  <p className="text-black hover:text-primary">
-                    {t.ourServices}
-                  </p>
-                </Link>
               </li>
               <li>
                 <Link href="/contact-us">

@@ -112,7 +112,8 @@ const transporter = nodemailer.createTransport({
 
 export async function POST(request) {
   try {
-    const { dataid, bookingData, userEmail, userName } = await request.json();
+    const { dataid, bookingData, userEmail, userName, phone } =
+      await request.json();
 
     const formattedDate = new Date(bookingData.date).toDateString();
     const returnDate = bookingData.returnTrip
@@ -134,6 +135,7 @@ export async function POST(request) {
         <li><strong>Cars:</strong> ${bookingData.cars}</li>
         <li><strong>Date:</strong> ${formattedDate} </li>
         <li><strong>Time:</strong> ${bookingData.time}</li>
+        <li><strong>Vehicle Type:</strong> ${bookingData.vehicleType}</li>
         <li><strong>Price:</strong> $${bookingData.price}</li>
         ${
           bookingData.returnTrip
@@ -142,7 +144,7 @@ export async function POST(request) {
               ).toDateString()}</li>
               <li><strong>Return Time:</strong> ${bookingData.returnTime}</li>`
             : ""
-        }
+        }       
         <li><strong>Our WhatsApp:</strong>+221-78 750 79 89</li>
       </ul>
 
@@ -165,6 +167,7 @@ export async function POST(request) {
         <li><strong>Cars:</strong> ${bookingData.cars}</li>
         <li><strong>Date:</strong> ${formattedDate} </li>
         <li><strong>Time:</strong> ${bookingData.time}</li>
+        <li><strong>Vehicle Type:</strong> ${bookingData.vehicleType}</li>
         <li><strong>Price:</strong> $${bookingData.price}</li>
         ${
           bookingData.returnTrip
@@ -174,6 +177,7 @@ export async function POST(request) {
               <li><strong>Return Time:</strong> ${bookingData.returnTime}</li>`
             : ""
         }
+        <li><strong>Phone Number:</strong> ${phone}</li>
       </ul>
       <p>Please confirm availability for the ride by clicking the button below:</p>
       <a href="${confirmationUrl}" style="display: inline-block; padding: 10px 20px; color: white; background-color: orange; text-decoration: none; border-radius: 5px;">Confirm Booking</a>

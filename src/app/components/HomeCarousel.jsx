@@ -85,9 +85,31 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Banner from "./Banner";
 const carouseldata = [
-  { id: "1", img: "/images/banner.png" },
-  { id: "2", img: "/images/banner2.png" },
-  { id: "3", img: "/images/banner3.png" },
+  {
+    id: "1",
+    img: "/images/banner1.jpeg",
+    title: "Book Your Journey Today",
+    // desc: "Effortless rides from Blaise Diagne Airport to anywhere in Senegal, and vice versa.",
+    desc: "Connecting from Blaise Diagne International Airport, Senegal to any Anywhere in Senegal and Anywhere in Senegal to Blaise Diagne International Airport, Senegal.",
+  },
+  {
+    id: "2",
+    img: "/images/banner2.jpeg",
+    title: "Get 10% Discount on a Return Trip",
+    desc: "Enjoy a 10% discount on your return trip with us! Just select the return trip option when booking your vehicle.",
+  },
+  {
+    id: "3",
+    img: "/images/banner3.jpg",
+    title: "Different types of vehicles - As per your comfort",
+    desc: "We offer three vehicle choices, ensuring you can find the perfect fit for your comfort and convenience.",
+  },
+  {
+    id: "4",
+    img: "/images/banner4.jpeg",
+    title: "No Advance Payment - Ride first, pay later!",
+    desc: "Pay after you’ve experienced a seamless and comfortable ride to your destination.",
+  },
 ];
 export default function HomeCarousel() {
   return (
@@ -147,7 +169,7 @@ export default function HomeCarousel() {
       >
         {carouseldata.map((data) => (
           <SwiperSlide key={data.id}>
-            <Banner img={data.img} />
+            <Banner img={data.img} title={data.title} desc={data.desc} />
           </SwiperSlide>
         ))}
       </Swiper>

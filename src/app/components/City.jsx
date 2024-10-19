@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../variants";
 import { MdArrowOutward } from "react-icons/md";
+import Link from "next/link";
 function City() {
   const [hasAnimated, setHasAnimated] = useState(false);
   return (
@@ -30,15 +31,16 @@ function City() {
       >
         <div className="row-span-2 col-span-2 relative">
           <Image
-            src="/images/man-standing-near-airport.jpg"
+            src="/images/Monument.jpg"
             layout="fill"
             objectFit="cover"
+            objectPosition="right"
             className="absolute inset-0 rounded-md hover:-translate-y-2 transition-transform duration-300"
           />
         </div>
         <div className="col-span-2 relative">
           <Image
-            src="/images/airport.jpg"
+            src="/images/airport3.jpg"
             layout="fill"
             objectFit="cover"
             objectPosition="center"
@@ -47,7 +49,7 @@ function City() {
         </div>
         <div className="row-span-1 col-span-2 w-full h-60 relative">
           <Image
-            src="/images/img3.png"
+            src="/images/happy-person.png"
             layout="fill"
             objectFit="cover"
             className="absolute inset-0 rounded-md hover:-translate-y-2 transition-transform duration-300"
@@ -67,19 +69,25 @@ function City() {
         className="flex w-full items-center justify-center py-2 md:ps-20 lg:ps-28 xl:ps-40"
       >
         <div className="flex-col">
-          <h2 className="text-2xl md:text-4xl font-bold ">
-            From the region, for
+          <h2 className="text-2xl md:text-3xl font-bold ">
+            Connecting You Effortlessly:
             <br />
-            the region
+            <p className="text-base text-gray-600 ">
+              From Blaise Diagne International Airport, Senegal to any city in
+              Senegal and Vice Versa
+            </p>
           </h2>
           <p className="mt-4 text-gray-600">
-            Superide operates in more than 120 cities in 18 countries from
-            Morocco to senegal.
+            Connecting you to 10+ regions across Senegal with our trusted cab
+            services. Enjoy hassle-free journeys guided by an experienced
+            Chauffeur. Experience the true essence of Senegal with every ride.
           </p>
-          <button className="mt-10 relative flex gap-2 h-[50px] w-40 items-center justify-center overflow-hidden bg-black text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600 hover:before:h-56 hover:before:w-56 rounded-lg">
-            <span className="relative z-10 ">View All Cities</span>
-            <MdArrowOutward className="z-10" />
-          </button>
+          <Link href="booking">
+            <button className="mt-10 relative flex gap-2 h-[50px] w-40 items-center justify-center overflow-hidden bg-black text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600 hover:before:h-56 hover:before:w-56 rounded-lg">
+              <span className="relative z-10 ">Book Now </span>
+              <MdArrowOutward className="z-10" />
+            </button>
+          </Link>
         </div>
       </motion.div>
     </div>
