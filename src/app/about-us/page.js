@@ -38,7 +38,7 @@ export default function AboutUs() {
                 </p>
                 <br />
                 <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Whether you're arriving or departing, our experienced
+                  Whether you&apos;re arriving or departing, our experienced
                   chauffeurs ensure a comfortable and stress-free ride to your
                   destination.
                 </p>

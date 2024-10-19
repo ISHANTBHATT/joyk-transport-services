@@ -139,7 +139,7 @@ export default async function BookingSuccess({ searchParams }) {
             )}
           </ul>
           <p className="text-sm text-gray-600 mt-4">
-            A confirmation email has been sent to user's registered email
+            A confirmation email has been sent to user&apos;s registered email
             address.
           </p>
         </div>
