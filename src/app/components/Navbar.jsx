@@ -775,7 +775,7 @@ export default function Header() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" onClick={toggleMobileMenu}>
+                  <Link href="/about-us" onClick={toggleMobileMenu}>
                     <p className="text-black hover:text-primary text-lg">
                       {t.aboutUs}
                     </p>
@@ -792,20 +792,6 @@ export default function Header() {
                   <Link href="/booking-history" onClick={toggleMobileMenu}>
                     <p className="text-black hover:text-primary text-lg">
                       {t.bookingHistory}
-                    </p>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/invoice" onClick={toggleMobileMenu}>
-                    <p className="text-black hover:text-primary text-lg">
-                      {t.invoice}
-                    </p>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/our-service" onClick={toggleMobileMenu}>
-                    <p className="text-black hover:text-primary text-lg">
-                      {t.ourServices}
                     </p>
                   </Link>
                 </li>

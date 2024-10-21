@@ -254,7 +254,7 @@ function Faq() {
             setHasAnimated(true);
           }
         }}
-        className="lg:px-80 pt-10"
+        className="lg:px-40 xl:px-80 pt-10"
       >
         {faqdata.slice(0, visibleFaqs).map((e) => (
           <div key={e.id} className="p-6 mt-4 border-b-[1px]">

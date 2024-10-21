@@ -434,6 +434,7 @@
 
 "use client";
 import { useState } from "react";
+import { FaSearchLocation } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeIn } from "../../../variants";
 const VerticalTabs = () => {
@@ -482,20 +483,10 @@ const VerticalTabs = () => {
     },
     {
       id: 3,
-      title: "Search your vehicle",
+      title: "Choose Vehicle For You",
       description:
         "As per the Number of passengers and your comfort, you can select the vehicle We offer three types of vehicles Sadan, 4*4, Van",
-      icon: (
-        <svg
-          className="w-3.5 h-3.5 text-gray-500 dark:text-gray-400"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          viewBox="0 0 18 20"
-        >
-          <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z" />
-        </svg>
-      ),
+      icon: <FaSearchLocation className="text-gray-400" />,
     },
     {
       id: 4,
@@ -519,7 +510,8 @@ const VerticalTabs = () => {
   const images = [
     "./images/laptop.png",
     "./images/desktop2.png",
-    "./images/desktop2.png",
+    "./images/desktop1.png",
+    "./images/ride.png",
   ];
 
   const changeStep = (newStep) => {

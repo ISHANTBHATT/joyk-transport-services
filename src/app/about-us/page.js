@@ -191,14 +191,18 @@ export default function AboutUs() {
                 </p>
               </div>
               <div className="flex space-x-4">
-                <button className="mt-10 relative flex gap-2 h-[50px] w-40 items-center justify-center overflow-hidden bg-black text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600 hover:before:h-56 hover:before:w-56 rounded-lg">
-                  <span className="relative z-10 ">Book Now</span>
-                  <MdArrowOutward className="z-10" />
-                </button>
-                <button className="mt-10 relative flex gap-2 h-[50px] w-40 items-center justify-center overflow-hidden bg-black text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600 hover:before:h-56 hover:before:w-56 rounded-lg">
-                  <span className="relative z-10 ">Learn More</span>
-                  <MdArrowOutward className="z-10" />
-                </button>
+                <Link href="/booking">
+                  <button className="mt-10 relative flex gap-2 h-[50px] w-40 items-center justify-center overflow-hidden bg-black text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600 hover:before:h-56 hover:before:w-56 rounded-lg">
+                    <span className="relative z-10 ">Book Now</span>
+                    <MdArrowOutward className="z-10" />
+                  </button>
+                </Link>
+                <Link href="/contact-us">
+                  <button className="mt-10 relative flex gap-2 h-[50px] w-40 items-center justify-center overflow-hidden bg-black text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600 hover:before:h-56 hover:before:w-56 rounded-lg">
+                    <span className="relative z-10 ">Learn More</span>
+                    <MdArrowOutward className="z-10" />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
