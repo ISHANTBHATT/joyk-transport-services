@@ -43,6 +43,7 @@ function HomePage() {
     returnTime: "",
     price: "",
     vehicleType: "",
+    flight: "",
   });
 
   // useEffect(() => {

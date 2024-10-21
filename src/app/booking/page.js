@@ -807,7 +807,7 @@ import { IoPeople } from "react-icons/io5";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { ClipLoader } from "react-spinners";
-
+import { MdAirlineSeatReclineNormal, MdFlight } from "react-icons/md";
 export default function Component() {
   const [bookingData, setBookingData] = useState({
     pickup: "",
@@ -821,6 +821,7 @@ export default function Component() {
     returnTime: "",
     price: "",
     vehicleType: "",
+    flight: "",
   });
   const [isloading, setIsloading] = useState(false);
 
@@ -1025,8 +1026,24 @@ export default function Component() {
                 </div>
                 <p className="text-sm text-gray-500">Cars</p>
               </div>
+              <div className="flex flex-col mt-8 gap-2">
+                <div className="flex gap-4 items-center">
+                  <MdFlight className="h-6 w-6" />
+                  <input
+                    className="appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="flight"
+                    type="text"
+                    min="1"
+                    name="flight"
+                    value={bookingData.flight}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <p className="text-sm text-gray-500">Flight Number</p>
+              </div>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center justify-center">
               {bookingData.vehicleType ? (
                 <img src={`/images/${bookingData.vehicleType}.png`} alt="" />
               ) : (
@@ -1045,7 +1062,7 @@ export default function Component() {
                 <option value="van">Van</option>
               </select>
             </div>
-            <div className="flex flex-col justify-between  gap-10 lg:gap-0 mt-6 lg:mt-0">
+            <div className="flex flex-col justify-between gap-10 lg:gap-4 mt-6 lg:mt-0 lg:pt-14">
               <div className="flex flex-col">
                 <div className="flex gap-2 items-center">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -1064,15 +1081,25 @@ export default function Component() {
                       ></path>
                     </svg>
                   </svg>
-                  <div className="text-white p-2 text-xs bg-gray-700 rounded">
+                  <div className="text-white p-2 text-xs bg-gray-700 rounded ml-1.5">
                     <p>Free cancellation</p>
                   </div>
                 </div>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500 text-sm pt-3">
                   Up to 12 hour before pickup time.
                 </p>
               </div>
-              <div className="flex flex-col mt-4">
+              <div className="flex flex-col">
+                <div className="flex gap-2 items-center">
+                  <MdAirlineSeatReclineNormal className="text-3xl" />
+                  <div className="text-white p-2 text-xs bg-gray-700 rounded">
+                    <p>
+                      Passengers {bookingData.vehicleType === "van" ? 14 : 3}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col">
                 <div className="flex flex-col gap-2 ">
                   <label className="flex items-center">
                     <input

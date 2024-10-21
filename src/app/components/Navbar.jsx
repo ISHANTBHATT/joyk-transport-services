@@ -632,7 +632,7 @@ export default function Header() {
                 {/* <Link href="/"> */}
                 <p className="text-black hover:text-primary">{t.ourServices}</p>
                 {/* </Link> */}
-                <ul className="absolute left-0 pt-6 hidden group-hover:block text-white py-2 w-80">
+                {/* <ul className="absolute left-0 pt-6 hidden group-hover:block text-white py-2 w-80">
                   <li className="bg-black">
                     <Link href="/booking">
                       <p className="block px-2 py-2 hover:bg-[#2f3134] hover:text-primary">
@@ -647,13 +647,22 @@ export default function Header() {
                       </p>
                     </Link>
                   </li>
-                  {/* <li className="bg-black">
-                    <Link href="/invoice">
-                      <p className="block px-2 py-2 hover:bg-[#2f3134] hover:text-primary">
-                        {t.invoice}
+                </ul> */}
+                <ul className="absolute left-0 pt-2 hidden group-hover:block text-black bg-white rounded-md shadow-lg w-80">
+                  <li>
+                    <Link href="/booking">
+                      <p className="block px-4 py-2 hover:bg-gray-100 hover:text-primary rounded-t-md">
+                        {t.bookVehicle}
                       </p>
                     </Link>
-                  </li> */}
+                  </li>
+                  <li>
+                    <Link href="/booking-history">
+                      <p className="block px-4 py-2 hover:bg-gray-100 hover:text-primary rounded-b-md">
+                        {t.bookingHistory}
+                      </p>
+                    </Link>
+                  </li>
                 </ul>
               </li>
               <li>

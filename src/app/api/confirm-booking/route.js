@@ -254,7 +254,7 @@ export async function GET(request) {
                <li><strong>Cars:</strong> ${booking.cars}</li>
                <li><strong>Date:</strong> ${new Date(
                  booking.date
-               ).toLocaleDateString()}</li>
+               ).toDateString()}</li>
                <li><strong>Time:</strong> ${booking.time}</li>
                <li><strong>Vehicle Type:</strong> ${booking.vehicleType}</li>
                <li><strong>Price:</strong> $${booking.price}</li>
@@ -263,7 +263,7 @@ export async function GET(request) {
                    ? `
                <li><strong>Return Date:</strong> ${new Date(
                  booking.returnDate
-               ).toLocaleDateString()}</li>
+               ).toDateString()}</li>
                <li><strong>Return Time:</strong> ${booking.returnTime}</li>
                `
                    : ""
@@ -292,6 +292,11 @@ export async function GET(request) {
         <h1>Booking Confirmation</h1>
         <p class="success-message">Your booking has been successfully confirmed!</p>
         <div class="booking-details">
+          <h2>User Details:</h2>
+            <ul>
+            <li><strong>Name:</strong> ${user.name}</li>
+            <li><strong>Email:</strong> ${user.email}</li>
+            </ul>
           <h2>Booking Details:</h2>
           <ul>
             <li><strong>Pickup:</strong> ${booking.pickup}</li>
@@ -300,7 +305,7 @@ export async function GET(request) {
             <li><strong>Cars:</strong> ${booking.cars}</li>
             <li><strong>Date:</strong> ${new Date(
               booking.date
-            ).toLocaleDateString()}</li>
+            ).toDateString()}</li>
             <li><strong>Time:</strong> ${booking.time}</li>
             <li><strong>Vehicle Type:</strong> ${booking.vehicleType}</li>
             <li><strong>Price:</strong> $${booking.price}</li>
@@ -309,7 +314,7 @@ export async function GET(request) {
                 ? `
             <li><strong>Return Date:</strong> ${new Date(
               booking.returnDate
-            ).toLocaleDateString()}</li>
+            ).toDateString()}</li>
             <li><strong>Return Time:</strong> ${booking.returnTime}</li>
             `
                 : ""
