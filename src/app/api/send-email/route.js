@@ -164,7 +164,7 @@ export async function POST(request) {
         <li><strong>Pickup:</strong> ${bookingData.pickup}</li>
         <li><strong>Dropoff:</strong> ${bookingData.dropoff}</li>
         <li><strong>Flight Number: </strong> ${bookingData.flight}</li>
-        <li><strong>Track Flight: </strong><a href="${flight}" style="display: inline-block; padding: 1px 20px; color: white; background-color: blue; text-decoration: none; border-radius: 5px;">Flight</a></li>
+        <li><strong>Track Flight: </strong><a href="${flight}" style="display: inline-block; padding: 1px 20px; color: white; background-color: blue; text-decoration: none; border-radius: 5px;">Click here</a></li>
         <li><strong>Passengers:</strong> ${bookingData.passengers}</li>
         <li><strong>Cars:</strong> ${bookingData.cars}</li>
         <li><strong>Date:</strong> ${formattedDate} </li>
