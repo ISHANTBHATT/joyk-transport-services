@@ -1,9 +1,13 @@
-// import { Button } from "@/components/ui/button";
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../translations";
 
 export default function AboutUs() {
+  const { language, changeLanguage } = useLanguage();
+  const t = translations[language];
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
@@ -12,46 +16,36 @@ export default function AboutUs() {
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-white">
-                  About Shuttle Cab
+                  {t.About.about}
                 </h1>
                 <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl">
-                  Your reliable partner for comfortable and safe rides. Discover
-                  our story and commitment to excellence.
+                  {t.About.headline}
                 </p>
               </div>
             </div>
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
-          <div className="container px-4 md:px-6">
+          <div className="px-4 md:px-6">
             <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
               <div className="space-y-2 md:w-1/2">
                 {/* <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                   Our Mission
                 </h2> */}
                 <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  We specialize in offering reliable and convenient cab services
-                  for seamless travel between the Blaise Diagne International
-                  Airport, Senegal, and any city in Senegal, as well as from any
-                  city in Senegal to the Blaise Diagne International Airport,
-                  Senegal.
+                  {t.About.desc}
                 </p>
                 <br />
                 <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Whether you&apos;re arriving or departing, our experienced
-                  chauffeurs ensure a comfortable and stress-free ride to your
-                  destination.
+                  {t.About.desc2}
                 </p>
                 <br />
                 <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  With a strong focus on safety, punctuality, and customer
-                  satisfaction, we are dedicated to making your journey smooth
-                  and enjoyable.
+                  {t.About.desc3}
                 </p>
                 <br />
                 <p className="text-neutral-700 font-bold text-2xl">
-                  Book with us for hassle-free airport transfers across Senegal
-                  :)
+                  {t.About.desc4}
                 </p>
               </div>
               <div className="md:w-1/2">
@@ -183,23 +177,22 @@ export default function AboutUs() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Ready to Ride with Us?
+                  {t.About.headline2}
                 </h2>
                 <p className="max-w-[600px] text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Experience the Shuttle Cab difference today. Book your ride
-                  and enjoy a journey like never before.
+                  {t.About.subheading}
                 </p>
               </div>
-              <div className="flex space-x-4">
+              <div className="flex flex-col md:flex-row gap-4">
                 <Link href="/booking">
-                  <button className="mt-10 relative flex gap-2 h-[50px] w-40 items-center justify-center overflow-hidden bg-black text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600 hover:before:h-56 hover:before:w-56 rounded-lg">
-                    <span className="relative z-10 ">Book Now</span>
+                  <button className="mt-10 relative flex gap-2 h-[50px] w-60 items-center justify-center overflow-hidden bg-black text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600 hover:before:h-56 hover:before:w-64 rounded-lg">
+                    <span className="relative z-10 ">{t.About.button}</span>
                     <MdArrowOutward className="z-10" />
                   </button>
                 </Link>
                 <Link href="/contact-us">
-                  <button className="mt-10 relative flex gap-2 h-[50px] w-40 items-center justify-center overflow-hidden bg-black text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600 hover:before:h-56 hover:before:w-56 rounded-lg">
-                    <span className="relative z-10 ">Learn More</span>
+                  <button className="mt-10 relative flex gap-2 h-[50px] w-60 items-center justify-center overflow-hidden bg-black text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600 hover:before:h-56 hover:before:w-64 rounded-lg">
+                    <span className="relative z-10 ">{t.About.button2}</span>
                     <MdArrowOutward className="z-10" />
                   </button>
                 </Link>

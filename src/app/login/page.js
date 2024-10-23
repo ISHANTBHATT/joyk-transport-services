@@ -8,7 +8,12 @@ import Link from "next/link";
 import { FaEye } from "react-icons/fa";
 import { IoEyeOffSharp } from "react-icons/io5";
 import { ClipLoader, SyncLoader } from "react-spinners";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../translations";
+
 function Page() {
+  const { language, changeLanguage } = useLanguage();
+  const t = translations[language];
   const [email, setEmail] = useState("");
   const [showpassword, setShowpassword] = useState(false);
   const [password, setPassword] = useState("");
@@ -77,10 +82,10 @@ function Page() {
   return (
     <div className="mx-auto my-20 flex flex-col gap-8">
       <div className="flex flex-col mx-auto w-full gap-4 text-center">
-        <p className="text-4xl font-semibold">Sign in</p>
-        <p className="text-sm">
+        <p className="text-4xl font-semibold">{t.login.title}</p>
+        {/* <p className="text-sm">
           Sign in with this account across the following sites.
-        </p>
+        </p> */}
       </div>
       {error && (
         <div
@@ -126,7 +131,7 @@ function Page() {
                 for="password"
                 className="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0]  peer-disabled:opacity-50 peer-disabled:pointer-events-none peer-focus:scale-90 peer-focus:translate-x-0.5 peer-focus:-translate-y-1.5 peer-focus:text-gray-500  peer-[:not(:placeholder-shown)]:scale-90 peer-[:not(:placeholder-shown)]:translate-x-0.5 peer-[:not(:placeholder-shown)]:-translate-y-1.5 peer-[:not(:placeholder-shown)]:text-gray-500 "
               >
-                Password
+                {t.register.password}
               </label>
               <div className=" absolute right-4 top-5 z-[10]">
                 {showpassword ? (
@@ -145,7 +150,7 @@ function Page() {
                 </>
               ) : (
                 <>
-                  <span className="relative z-10 ">Sign in</span>
+                  <span className="relative z-10 ">{t.login.title}</span>
                   <MdArrowOutward className="z-10 " />
                 </>
               )}
@@ -155,7 +160,7 @@ function Page() {
             <div className="flex items-center gap-4">
               {/* <div className=""></div> */}
               <hr className="w-40" />
-              <span>OR</span>
+              <span>{t.register.or}</span>
               <hr className="w-44" />
             </div>
             <div>
@@ -164,7 +169,7 @@ function Page() {
                 className="mt-10 relative flex gap-2 h-[50px] w-full items-center justify-start overflow-hidden bg-black text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:bg-blue-600 before:duration-500 before:ease-out hover:shadow-blue-600 hover:before:h-56 hover:before:w-full rounded-lg"
               >
                 <FcGoogle className="z-10 w-32 h-6" />
-                <span className="relative z-10 ">Continue Google</span>
+                <span className="relative z-10 ">{t.register.google}</span>
               </button>
             </div>
             {/* <div>
@@ -172,9 +177,11 @@ function Page() {
             </div> */}
           </div>
           <div className="text-center text-sm">
-            <span>Not signed up? </span>
+            <span>{t.login.signedup} </span>
             <Link href="/register">
-              <span className=" hover:text-primary">Create an account.</span>
+              <span className=" hover:text-primary">
+                {t.login.createaccount}
+              </span>
             </Link>
           </div>
         </div>

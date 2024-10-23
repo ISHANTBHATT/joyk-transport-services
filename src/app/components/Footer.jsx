@@ -8,11 +8,14 @@ import { FaLinkedin } from "react-icons/fa6";
 import { CiLocationOn } from "react-icons/ci";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../variants";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../translations";
 
 function Footer() {
+  const { language, changeLanguage } = useLanguage();
+  const t = translations[language];
   const [hasAnimated, setHasAnimated] = useState(false);
   return (
     <footer className="font-sans tracking-wide bg-black pt-10 pb-4 px-14 lg:px-20 xl:px-40">
@@ -48,10 +51,7 @@ function Footer() {
             </div>
 
             <p className="text-sm mt-6 text-gray-300 lg:px-10 text-justify">
-              We specialize in offering reliable and convenient cab services for
-              seamless travel between the Blaise Diagne International Airport,
-              Senegal, and any city in Senegal, as well as from any city in
-              Senegal to the Blaise Diagne International Airport, Senegal
+              {t.footer.title}
               {/* <a
                 href="javascript:void(0)"
                 className="text-sm font-semibold text-[#007bff]"
@@ -80,7 +80,7 @@ function Footer() {
               </div>
               <a href="" className="text-gray-100 text-sm ml-4">
                 <span className="block text-xl text-primary font-bold">
-                  Address
+                  {t.footer.address}
                 </span>
                 <span className="font-bold">
                   116 Cite Sonatel Zac Mbao, Dakar-Senegal
@@ -104,7 +104,7 @@ function Footer() {
               </div>
               <a href="" className="text-gray-100 text-sm ml-4">
                 <span className="block text-xl text-primary font-bold">
-                  Call Our Office
+                  {t.footer.call}
                 </span>
                 <span className="font-bold">+221-78 750 79 89</span>
               </a>
@@ -176,12 +176,12 @@ function Footer() {
         <ul className="flex flex-wrap gap-4 md:gap-20">
           <li>
             <a href="" className="text-gray-300 hover:text-gray-100 text-sm">
-              Terms of Service
+              {t.footer.terms}
             </a>
           </li>
           <li>
             <a href="" className="text-gray-300 hover:text-gray-100 text-sm">
-              Privacy Policy
+              {t.footer.policy}
             </a>
           </li>
           {/* <li>
@@ -192,7 +192,7 @@ function Footer() {
         </ul>
 
         <p className="text-sm text-gray-300 lg:ml-auto max-lg:mt-6">
-          Copyright © 2024 Joyk Multiservices Group. All rights reserved.
+          {t.footer.copyright}
         </p>
       </div>
     </footer>

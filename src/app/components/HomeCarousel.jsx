@@ -80,38 +80,44 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../translations";
 // import './styles.css';
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Banner from "./Banner";
-const carouseldata = [
-  {
-    id: "1",
-    img: "/images/banner1.jpeg",
-    title: "Book Your Journey Today",
-    // desc: "Effortless rides from Blaise Diagne Airport to anywhere in Senegal, and vice versa.",
-    desc: "Connecting from Blaise Diagne International Airport, Senegal to any Anywhere in Senegal and Anywhere in Senegal to Blaise Diagne International Airport, Senegal.",
-  },
-  {
-    id: "2",
-    img: "/images/banner2.jpeg",
-    title: "Get 10% Discount on a Return Trip",
-    desc: "Enjoy a 10% discount on your return trip with us! Just select the return trip option when booking your vehicle.",
-  },
-  {
-    id: "3",
-    img: "/images/banner3.jpg",
-    title: "Different types of vehicles - As per your comfort",
-    desc: "We offer three vehicle choices, ensuring you can find the perfect fit for your comfort and convenience.",
-  },
-  {
-    id: "4",
-    img: "/images/banner4.jpeg",
-    title: "No Advance Payment - Ride first, pay later!",
-    desc: "Pay after you’ve experienced a seamless and comfortable ride to your destination.",
-  },
-];
+
 export default function HomeCarousel() {
+  const { language, changeLanguage } = useLanguage();
+
+  const t = translations[language];
+  const carouseldata = [
+    {
+      id: "1",
+      img: "/images/banner1.jpeg",
+      title: `${t.Homepage.title}`,
+      // desc: "Effortless rides from Blaise Diagne Airport to anywhere in Senegal, and vice versa.",
+      desc: `${t.Homepage.desc}`,
+    },
+    {
+      id: "2",
+      img: "/images/banner2.jpeg",
+      title: `${t.Homepage.title2}`,
+      desc: `${t.Homepage.desc2}`,
+    },
+    {
+      id: "3",
+      img: "/images/banner3.jpg",
+      title: `${t.Homepage.title3}`,
+      desc: `${t.Homepage.desc3}`,
+    },
+    {
+      id: "4",
+      img: "/images/banner4.jpeg",
+      title: `${t.Homepage.title4}`,
+      desc: `${t.Homepage.desc4}`,
+    },
+  ];
   return (
     <>
       <style jsx global>{`

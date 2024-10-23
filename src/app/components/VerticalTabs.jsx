@@ -437,15 +437,20 @@ import { useState } from "react";
 import { FaSearchLocation } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeIn } from "../../../variants";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../translations";
 const VerticalTabs = () => {
   const [activeStep, setActiveStep] = useState(1);
   const [direction, setDirection] = useState(0); // To track slide direction
   const [hasAnimated, setHasAnimated] = useState(false);
+  const { language, changeLanguage } = useLanguage();
+
+  const t = translations[language];
   const steps = [
     {
       id: 1,
-      title: "Book Your Ride",
-      description: "Select Your Pickup and Drop Location ",
+      title: `${t.VerticalTabs.title}`,
+      description: `${t.VerticalTabs.description}`,
       icon: (
         <svg
           className="w-3.5 h-3.5 text-green-500"
@@ -466,9 +471,8 @@ const VerticalTabs = () => {
     },
     {
       id: 2,
-      title: "Signup / Sign In",
-      description:
-        "If you're a new user, sign up by entering your basic details. If you're an existing user, please log in with your credentials",
+      title: `${t.VerticalTabs.title2}`,
+      description: `${t.VerticalTabs.description2}`,
       icon: (
         <svg
           className="w-3.5 h-3.5 text-gray-500 dark:text-gray-400"
@@ -483,16 +487,14 @@ const VerticalTabs = () => {
     },
     {
       id: 3,
-      title: "Choose Vehicle For You",
-      description:
-        "As per the Number of passengers and your comfort, you can select the vehicle We offer three types of vehicles Sadan, 4*4, Van",
+      title: `${t.VerticalTabs.title3}`,
+      description: `${t.VerticalTabs.description3}`,
       icon: <FaSearchLocation className="text-gray-400" />,
     },
     {
       id: 4,
-      title: "Enjoy your Ride!",
-      description:
-        "Sit back, relax, and let us take you there and feel free to reach out if you need anything during your ride (CONTACT US -+221-78 750 79 89)",
+      title: `${t.VerticalTabs.title4}`,
+      description: `${t.VerticalTabs.description4}`,
       icon: (
         <svg
           className="w-3.5 h-3.5 text-gray-500 dark:text-gray-400"
@@ -566,7 +568,7 @@ const VerticalTabs = () => {
         }}
         className="text-5xl pb-16"
       >
-        How It Works
+        {t.VerticalTabs.headline}
       </motion.p>
       <motion.div
         variants={fadeIn("up", 0.3)}

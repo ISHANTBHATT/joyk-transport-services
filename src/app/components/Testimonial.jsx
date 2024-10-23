@@ -224,53 +224,15 @@ import { useState } from "react";
 import { FaQuoteLeft } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../variants";
-
-const people = [
-  {
-    name: "Paul A.",
-    title: "Founder of XYZ",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa nostrum labore dolor facilis.",
-  },
-  {
-    name: "Claude O.",
-    title: "Founder of XYZ",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa nostrum labore dolor facilis, nesciunt.",
-  },
-  {
-    name: "Max Q.",
-    title: "Founder of XYZ",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa nostrum labore dolor facilis.",
-  },
-  {
-    name: "Cindy J.",
-    title: "Founder of XYZ",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa nostrum labore dolor facilis, nesciunt facere mollitia nam.",
-  },
-  {
-    name: "Jeff R.",
-    title: "Founder of XYZ",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa nostrum labore dolor facilis, nesciunt facere mollitia nam aspernatur corporis!",
-  },
-  {
-    name: "Garrett P.",
-    title: "Founder of XYZ",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa nostrum labore dolor facilis, nesciunt facere mollitia.",
-  },
-  {
-    name: "Xavier C.",
-    title: "Founder of XYZ",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa nostrum labore dolor facilis, nesciunt facere mollitia nam aspernatur.",
-  },
-];
+import { FaStar } from "react-icons/fa";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../translations";
 
 const Testimonial = () => {
+  const { language, changeLanguage } = useLanguage();
+  const t = translations[language];
+  const people = t.people;
+
   const [hasAnimated, setHasAnimated] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0); // Updated to start from 0 index
 
@@ -308,7 +270,14 @@ const Testimonial = () => {
             </div>
             <div>
               <h3 className="font-bold">{people[currentSlide].name}</h3>
-              <p className="text-sm">{people[currentSlide].title}</p>
+              {/* <p className="text-sm">{people[currentSlide].title}</p> */}
+              <div className="flex text-yellow-400">
+                {Array(people[currentSlide].stars)
+                  .fill()
+                  .map((_, i) => (
+                    <FaStar key={i} />
+                  ))}
+              </div>
             </div>
           </div>
         </div>

@@ -321,6 +321,7 @@
 
 // export default Booking;
 
+//working
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import Datepicker from "react-tailwindcss-datepicker";
@@ -331,6 +332,9 @@ import { CiSearch } from "react-icons/ci";
 import { useSession } from "next-auth/react";
 import { SyncLoader } from "react-spinners";
 import Link from "next/link";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../translations";
+
 const senegalLocations = [
   "Dakar",
   "Saint-Louis",
@@ -349,6 +353,9 @@ const senegalLocations = [
   "Blaise Diagne International Airport",
 ];
 function Booking({ bookingData, setBookingData }) {
+  const { language, changeLanguage } = useLanguage();
+  const t = translations[language];
+
   const [hasAnimated, setHasAnimated] = useState(false);
 
   const [pickupSuggestions, setPickupSuggestions] = useState([]);
@@ -413,6 +420,8 @@ function Booking({ bookingData, setBookingData }) {
   // console.log("bookingData -->", bookingData);
   const today = new Date();
   today.setHours(0, 0, 0, 0);
+
+  console.log(bookingData.date);
   return (
     <motion.div
       variants={fadeIn("up", 1.8)}
@@ -434,11 +443,25 @@ function Booking({ bookingData, setBookingData }) {
             asSingle={true}
             value={value}
             // onChange={(newValue) => setValue(newValue)}
+            // onChange={(newValue) => {
+            //   setValue(newValue); // Update Datepicker value
+            //   setBookingData((prevState) => ({
+            //     ...prevState,
+            //     date: newValue.startDate ? new Date(newValue.startDate) : null,
+            //   }));
+            // }}
             onChange={(newValue) => {
               setValue(newValue); // Update Datepicker value
+              const formattedDate = newValue.startDate
+                ? new Date(newValue.startDate).toLocaleDateString("en-GB", {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                  })
+                : null;
               setBookingData((prevState) => ({
                 ...prevState,
-                date: newValue.startDate ? new Date(newValue.startDate) : null,
+                date: formattedDate, // Store only the date part
               }));
             }}
             required={true}
@@ -454,7 +477,7 @@ function Booking({ bookingData, setBookingData }) {
 
       <div className="flex items-center w-full lg:w-auto">
         <div className="w-full lg:w-auto">
-          <p className="text-gray-500 text-sm ml-4">Time</p>
+          <p className="text-gray-500 text-sm ml-4">{t.Booking.time}</p>
           <input
             className="custom-time-input appearance-none rounded-lg w-full py-2 px-3 text-gray-400 leading-tight border lg:border-none focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500"
             id="time"
@@ -462,6 +485,7 @@ function Booking({ bookingData, setBookingData }) {
             name="time"
             value={bookingData.time || ""}
             onChange={handleChange}
+            placeholder="Enter Pickup time"
             required
           />
 
@@ -487,7 +511,7 @@ function Booking({ bookingData, setBookingData }) {
           </svg>
         </div>
         <div className="w-full">
-          <p className="text-gray-500 text-sm ml-3">From</p>
+          <p className="text-gray-500 text-sm ml-3">{t.Booking.from}</p>
           <input
             className="appearance-none border lg:border-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500"
             id="pickup"
@@ -496,7 +520,7 @@ function Booking({ bookingData, setBookingData }) {
             onChange={handleChange}
             required
             type="text"
-            placeholder="Enter pickup location"
+            placeholder={t.Booking.pickup}
           />
           {pickupSuggestions.length > 0 && (
             <ul className="absolute bg-white border rounded mt-1 w-96 max-h-40 overflow-y-auto z-10">
@@ -532,12 +556,12 @@ function Booking({ bookingData, setBookingData }) {
           </svg>
         </div>
         <div className="w-full">
-          <p className="text-gray-500 text-sm ml-3">To</p>
+          <p className="text-gray-500 text-sm ml-3">{t.Booking.to}</p>
           <input
             className=" appearance-none rounded border lg:border-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500"
             id="dropoff"
             type="text"
-            placeholder="Enter destination"
+            placeholder={t.Booking.destination}
             name="dropoff"
             value={bookingData.dropoff || ""}
             onChange={handleChange}
@@ -565,7 +589,7 @@ function Booking({ bookingData, setBookingData }) {
           onClick={handleSearch}
           className="bg-black w-full lg:w-auto text-white text-lg py-4 px-6 rounded-full hover:bg-gray-800 flex gap-2 items-center"
         >
-          <CiSearch className="h-6 w-6" /> Search
+          <CiSearch className="h-6 w-6" /> {t.Booking.Search}
         </button>
         {/* </Link> */}
       </div>

@@ -808,7 +808,12 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { ClipLoader } from "react-spinners";
 import { MdAirlineSeatReclineNormal, MdFlight } from "react-icons/md";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../translations";
+
 export default function Component() {
+  const { language, changeLanguage } = useLanguage();
+  const t = translations[language];
   const [bookingData, setBookingData] = useState({
     pickup: "",
     dropoff: "",
@@ -980,7 +985,9 @@ export default function Component() {
     const day = String(d.getDate()).padStart(2, "0");
     return `${year}-${month}-${day}`;
   };
-
+  const formatDateForInput = (date) => {
+    return date ? date.split("T")[0] : "";
+  };
   return (
     <div className="w-full py-20 lg:py-40">
       <div className="relative w-full h-full flex justify-center">
@@ -988,12 +995,10 @@ export default function Component() {
       </div>
       <div className="w-full md:px-20">
         <form>
-          <div className="flex flex-col lg:flex-row shadow p-8 justify-between">
+          <div className="flex flex-col lg:flex-row shadow p-8 justify-between gap-4">
             <div className="">
-              <p className="text-3xl font-semibold">RIDE</p>
-              <p className="text-gray-500 text-sm">
-                Reliable ride at the best price.
-              </p>
+              <p className="text-3xl font-semibold">{t.Booking.Ride}</p>
+              <p className="text-gray-500 text-sm">{t.Booking.Reliable}</p>
               <div className="flex flex-col mt-8 gap-2">
                 <div className="flex gap-4 items-center">
                   <IoPeople className="h-6 w-6" />
@@ -1008,7 +1013,7 @@ export default function Component() {
                     required
                   />
                 </div>
-                <p className="text-sm text-gray-500">Passengers</p>
+                <p className="text-sm text-gray-500">{t.Booking.Passengers}</p>
               </div>
               <div className="flex flex-col mt-8 gap-2">
                 <div className="flex gap-4 items-center">
@@ -1024,7 +1029,7 @@ export default function Component() {
                     required
                   />
                 </div>
-                <p className="text-sm text-gray-500">Cars</p>
+                <p className="text-sm text-gray-500">{t.Booking.Cars}</p>
               </div>
               <div className="flex flex-col mt-8 gap-2">
                 <div className="flex gap-4 items-center">
@@ -1040,7 +1045,7 @@ export default function Component() {
                     required
                   />
                 </div>
-                <p className="text-sm text-gray-500">Flight Number</p>
+                <p className="text-sm text-gray-500">{t.Booking.Flight}</p>
               </div>
             </div>
             <div className="flex flex-col items-center justify-center">
@@ -1056,7 +1061,7 @@ export default function Component() {
                 onChange={handleChange}
                 className="w-full p-2 border border-gray-300 rounded-md"
               >
-                <option value="">Select the Vehicle Type</option>
+                <option value="">{t.Booking.Select}</option>
                 <option value="sedan">Sedan</option>
                 <option value="4x4">4x4</option>
                 <option value="van">Van</option>
@@ -1082,11 +1087,11 @@ export default function Component() {
                     </svg>
                   </svg>
                   <div className="text-white p-2 text-xs bg-gray-700 rounded ml-1.5">
-                    <p>Free cancellation</p>
+                    <p>{t.Booking.Free}</p>
                   </div>
                 </div>
                 <p className="text-gray-500 text-sm pt-3">
-                  Up to 12 hour before pickup time.
+                  {t.Booking.cancellation}
                 </p>
               </div>
               <div className="flex flex-col">
@@ -1094,7 +1099,8 @@ export default function Component() {
                   <MdAirlineSeatReclineNormal className="text-3xl" />
                   <div className="text-white p-2 text-xs bg-gray-700 rounded">
                     <p>
-                      Passengers {bookingData.vehicleType === "van" ? 14 : 3}
+                      {t.Booking.Passengers}{" "}
+                      {bookingData.vehicleType === "van" ? 14 : 3}
                     </p>
                   </div>
                 </div>
@@ -1110,7 +1116,7 @@ export default function Component() {
                       className="form-checkbox h-5 w-5 text-indigo-600"
                     />
                     <span className="ml-2 text-gray-700">
-                      Book a return trip (10% discount)
+                      {t.Booking.discount}
                     </span>
                   </label>
                   {bookingData.returnTrip && (
@@ -1119,14 +1125,15 @@ export default function Component() {
                         className="block text-gray-500 text-sm mb-2"
                         htmlFor="returnDate"
                       >
-                        Return Date and Time
+                        {t.Booking.return}
                       </label>
                       <input
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         id="returnDate"
                         type="date"
                         name="returnDate"
-                        value={bookingData.returnDate}
+                        value={formatDateForInput(bookingData.returnDate)}
+                        // value={bookingData.returnDate}
                         onChange={handleChange}
                         min={formatDateTimeLocal(bookingData.date)}
                         required
@@ -1158,7 +1165,7 @@ export default function Component() {
                     </>
                   ) : (
                     <>
-                      <span className="relative z-10 ">Book</span>
+                      <span className="relative z-10 ">{t.Booking.Book}</span>
                     </>
                   )}
                 </button>

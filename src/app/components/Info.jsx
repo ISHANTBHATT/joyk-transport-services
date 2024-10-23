@@ -7,27 +7,33 @@ import { FaMoneyCheckDollar } from "react-icons/fa6";
 import { FaCar } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../variants";
-const cardData = [
-  {
-    id: 1,
-    Icon: TbClock24,
-    title: "24 Hours Availability",
-    desc: "Experience the convenience of our services available 24/7, ensuring you can access reliable transportation whenever you need it.",
-  },
-  {
-    id: 2,
-    Icon: FaMoneyCheckDollar,
-    title: "Fixed Fares",
-    desc: "Enjoy peace of mind with our transparent pricing! We charge the fixed fare from any location in Senegal to the Blaise Diagne International Airport, Senegal, and vice versa.",
-  },
-  {
-    id: 3,
-    Icon: FaCar,
-    title: "Comfortable Vehicles",
-    desc: "Pick from our three types of cabs, crafted to suit your needs and ensure a comfortable and smooth ride. We prioritise your comfort every time!",
-  },
-];
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../translations";
+
 function Info() {
+  const { language, changeLanguage } = useLanguage();
+
+  const t = translations[language];
+  const cardData = [
+    {
+      id: 1,
+      Icon: TbClock24,
+      title: `${t.Info.title}`,
+      desc: `${t.Info.desc}`,
+    },
+    {
+      id: 2,
+      Icon: FaMoneyCheckDollar,
+      title: `${t.Info.title2}`,
+      desc: `${t.Info.desc2}`,
+    },
+    {
+      id: 3,
+      Icon: FaCar,
+      title: `${t.Info.title3}`,
+      desc: `${t.Info.desc3}`,
+    },
+  ];
   const [hasAnimated, setHasAnimated] = useState(false);
   return (
     <div className="w-full p-2 md:p-10 lg:p-20">
@@ -43,7 +49,7 @@ function Info() {
         }}
         className="text-center text-3xl md:text-4xl lg:text-5xl text-gray-700 font-medium flex items-center justify-center"
       >
-        Discover What Sets Us Apart
+        {t.Info.headline}
       </motion.p>
       <motion.div
         variants={fadeIn("up", 0.3)}
@@ -82,7 +88,7 @@ function Info() {
           className="w-full md:w-1/2 "
         >
           <p className="text-3xl xl:text-5xl text-center md:text-left">
-            Spotlight Our Metrics
+            {t.Info.subtitle}
           </p>
         </motion.div>
         <motion.div
@@ -99,15 +105,15 @@ function Info() {
         >
           <div className="flex-col">
             <p className="">285</p>
-            <p className="text-sm sm:text-xl">Vehicles</p>
+            <p className="text-sm sm:text-xl">{t.Info.field}</p>
           </div>
           <div className="flex-col">
             <p>97</p>
-            <p className="text-sm sm:text-xl">Chauffeur</p>
+            <p className="text-sm sm:text-xl">{t.Info.field2}</p>
           </div>
           <div className="flex-col">
             <p>13K</p>
-            <p className="text-sm sm:text-xl">Happy Customer</p>
+            <p className="text-sm sm:text-xl">{t.Info.field3}</p>
           </div>
         </motion.div>
       </div>

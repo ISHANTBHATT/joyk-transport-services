@@ -5,7 +5,12 @@ import { useSession } from "next-auth/react";
 import { MdArrowOutward } from "react-icons/md";
 import { ClipLoader } from "react-spinners";
 import Image from "next/image";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../translations";
+
 function Page() {
+  const { language, changeLanguage } = useLanguage();
+  const t = translations[language];
   const { data: session, status } = useSession();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -36,11 +41,11 @@ function Page() {
   return (
     <div>
       <div className="px-8 md:px-32  py-12 text-white bg-test2 w-full ">
-        <p className="text-5xl "> Contact Us</p>
+        <p className="text-5xl "> {t.Contact.contact}</p>
         <p className="mt-4">
-          <Link href="/">Home -</Link>
+          <Link href="/">{t.Navigation.home} -</Link>
           <Link href="contact-us">
-            <span> Contact Us</span>
+            <span> {t.Contact.contact}</span>
           </Link>
         </p>
       </div>
@@ -68,7 +73,7 @@ function Page() {
           </div>
 
           <div className="flex flex-col gap-2 justify-center">
-            <p className="font-bold">Senegal Office</p>
+            <p className="font-bold">{t.Contact.office}</p>
             <p>116 Cite Sonatel Zac Mbao, Dakar-Senegal</p>
             <p>+221-78 750 79 89</p>
             <p>joykmultiservices@gmail.com</p>
@@ -79,7 +84,7 @@ function Page() {
       <div className="flex flex-col lg:flex-row my-20 mx-10">
         <div className="w-full  flex flex-col gap-8">
           <div className="flex flex-col mx-auto w-full gap-4 text-center">
-            <p className="text-4xl font-semibold">Leave us your info</p>
+            <p className="text-4xl font-semibold">{t.Contact.info}</p>
           </div>
           <form onSubmit={handleSubmit} className="mx-auto w-3/4">
             <div className="flex flex-col gap-6">
@@ -99,7 +104,7 @@ function Page() {
                     for="username"
                     className="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0]  peer-disabled:opacity-50 peer-disabled:pointer-events-none peer-focus:scale-90 peer-focus:translate-x-0.5 peer-focus:-translate-y-1.5 peer-focus:text-gray-500  peer-[:not(:placeholder-shown)]:scale-90 peer-[:not(:placeholder-shown)]:translate-x-0.5 peer-[:not(:placeholder-shown)]:-translate-y-1.5 peer-[:not(:placeholder-shown)]:text-gray-500 "
                   >
-                    Name
+                    {t.Contact.name}
                   </label>
                 </div>
               </div>
@@ -137,7 +142,7 @@ function Page() {
                     for="subject"
                     className="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0]  peer-disabled:opacity-50 peer-disabled:pointer-events-none peer-focus:scale-90 peer-focus:translate-x-0.5 peer-focus:-translate-y-1.5 peer-focus:text-gray-500  peer-[:not(:placeholder-shown)]:scale-90 peer-[:not(:placeholder-shown)]:translate-x-0.5 peer-[:not(:placeholder-shown)]:-translate-y-1.5 peer-[:not(:placeholder-shown)]:text-gray-500 "
                   >
-                    Subject
+                    {t.Contact.subject}
                   </label>
                 </div>
               </div>
@@ -178,7 +183,7 @@ function Page() {
                     </>
                   ) : (
                     <>
-                      <span className="relative z-10 ">Get In Touch</span>
+                      <span className="relative z-10 ">{t.Contact.touch}</span>
                       <MdArrowOutward className="z-10 " />
                     </>
                   )}
