@@ -421,7 +421,7 @@ function Booking({ bookingData, setBookingData }) {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
-  console.log(bookingData.date);
+  // console.log(bookingData.date);
   return (
     <motion.div
       variants={fadeIn("up", 1.8)}
@@ -453,11 +453,12 @@ function Booking({ bookingData, setBookingData }) {
             onChange={(newValue) => {
               setValue(newValue); // Update Datepicker value
               const formattedDate = newValue.startDate
-                ? new Date(newValue.startDate).toLocaleDateString("en-GB", {
-                    day: "2-digit",
-                    month: "short",
-                    year: "numeric",
-                  })
+                ? // new Date(newValue.startDate).toLocaleDateString("en-GB", {
+                  //     day: "2-digit",
+                  //     month: "short",
+                  //     year: "numeric",
+                  //   })
+                  new Date(newValue.startDate).toDateString()
                 : null;
               setBookingData((prevState) => ({
                 ...prevState,

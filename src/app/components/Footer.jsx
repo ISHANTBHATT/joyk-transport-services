@@ -163,11 +163,6 @@ function Footer() {
                 <FaInstagram className="text-white" />
               </a>
             </li>
-            <li className="hover:bg-[#343538] h-10 w-10 rounded-full flex items-center justify-center shrink-0 hover:-translate-y-1 transition-transform duration-300">
-              <a href="">
-                <FaXTwitter className="text-white" />
-              </a>
-            </li>
           </ul>
         </motion.div>
       </div>

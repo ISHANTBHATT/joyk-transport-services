@@ -988,6 +988,7 @@ export default function Component() {
   const formatDateForInput = (date) => {
     return date ? date.split("T")[0] : "";
   };
+  console.log(bookingData.date);
   return (
     <div className="w-full py-20 lg:py-40">
       <div className="relative w-full h-full flex justify-center">

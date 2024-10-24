@@ -61,7 +61,7 @@ export default function History() {
                   <div key={booking._id}>
                     <div className="px-4 py-4 sm:px-6">
                       <div className="flex items-center justify-between">
-                        <p className="text-sm font-medium text-indigo-600 truncate">
+                        <p className="text-sm font-medium text-indigo-600 ">
                           {/* {booking.direction === "airportToSenegal"
                         ? "Airport to Senegal"
                         : "Senegal to Airport"} */}
