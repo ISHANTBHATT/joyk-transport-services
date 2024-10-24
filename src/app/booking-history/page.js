@@ -52,7 +52,9 @@ export default function History() {
   return (
     <div className="min-h-screen bg-gray-100">
       <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold mb-4">{t.History.booking}</h2>
+        <h2 className="text-2xl font-bold mb-4 text-center md:text-left">
+          {t.History.booking}
+        </h2>
         <div className="bg-white shadow overflow-hidden sm:rounded-md">
           <ul className="divide-y divide-gray-200">
             {bookings.length > 0 ? (
@@ -86,8 +88,8 @@ export default function History() {
                           </p>
                         </div>
                       </div>
-                      <div className="mt-2 sm:flex sm:justify-between">
-                        <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
+                      <div className="mt-2 md:flex md:justify-between md:gap-8">
+                        <div className="flex flex-col md:flex-row gap-2 md:gap-4">
                           <p className="flex items-center text-sm text-gray-500">
                             {t.History.Price}:{booking.price}$
                           </p>
@@ -98,7 +100,7 @@ export default function History() {
                             {t.History.Passengers}: {booking.passengers}
                           </p>
                         </div>
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center justify-between gap-4">
                           <div className="mt-2 flex flex-col  text-sm text-gray-500 sm:mt-0">
                             <p>
                               {t.History.Pickup}:{" "}

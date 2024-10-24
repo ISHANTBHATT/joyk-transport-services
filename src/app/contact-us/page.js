@@ -69,7 +69,10 @@ function Page() {
       >
         <div className="flex  gap-10  w-full h-full justify-end text-xl">
           <div className="flex items-center">
-            <img src="/images/office-icon.png" className="w-32 h-32" />
+            <img
+              src="/images/office-icon.png"
+              className="w-40 h-20 sm:w-32 sm:h-32"
+            />
           </div>
 
           <div className="flex flex-col gap-2 justify-center">

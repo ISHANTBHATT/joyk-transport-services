@@ -595,7 +595,7 @@ export default function Header() {
 
   return (
     <header className="sticky h-20 top-0 bg-white shadow-md z-50 items-center flex sm:px-6">
-      <div className="w-full mx-auto px-4">
+      <div className="w-full mx-auto">
         <div className="flex items-center justify-between gap-4">
           {/* Header Left */}
           <div className="flex items-center">
