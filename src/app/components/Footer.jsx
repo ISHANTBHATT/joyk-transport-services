@@ -124,7 +124,10 @@ function Footer() {
                   />
                 </svg>
               </div>
-              <a href="" className="text-gray-100 text-sm ml-4">
+              <a
+                href="mailto:joykmultiservices@gmail.com"
+                className="text-gray-100 text-sm ml-4"
+              >
                 <span className="block text-xl text-primary font-bold">
                   Mail
                 </span>
@@ -186,8 +189,11 @@ function Footer() {
           </li> */}
         </ul>
 
-        <p className="text-sm text-gray-300 lg:ml-auto max-lg:mt-6">
-          {t.footer.copyright}
+        <p
+          className="text-sm text-gray-300 lg:ml-auto max-lg:mt-6"
+          dangerouslySetInnerHTML={{ __html: t.footer.copyright }}
+        >
+          {/* {t.footer.copyright} */}
         </p>
       </div>
     </footer>

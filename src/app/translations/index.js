@@ -9,7 +9,7 @@ export const translations = {
       title3: "Different types of vehicles - As per your comfort",
       desc3:
         "We offer three vehicle choices, ensuring you can find the perfect fit for your comfort and convenience.",
-      title: "No Advance Payment - Ride first, pay later!",
+      title4: "No Advance Payment - Ride first, pay later!",
       desc4:
         "Pay after you’ve experienced a seamless and comfortable ride to your destination.",
     },
@@ -210,8 +210,7 @@ export const translations = {
       call: "Call Our Office",
       terms: "Terms of Service",
       policy: "Privacy Policy",
-      copyright:
-        "Website Developed By Apace Digital Cargo | Copyright © 2024 Joyk Multiservices Group. All rights reserved.",
+      copyright: `Website Developed By <a class="underline" target="_blank" href="https://apacedigitalcargo.com/">Apace Digital Cargo </a> | Copyright © 2024 Joyk Multiservices Group. All rights reserved.`,
     },
     Contact: {
       contact: "Contact Us",
@@ -487,8 +486,7 @@ export const translations = {
       call: "Appelez notre bureau",
       terms: "Politique de confidentialité",
       policy: "Conditions de service",
-      copyright:
-        "Site Web développé par Apace Digital Cargo | Copyright © 2024 Joyk Multiservices Group. Tous droits réservés.",
+      copyright: `Site Web développé par <a class="underline" target="_blank" href="https://apacedigitalcargo.com/">Apace Digital Cargo</a> | Copyright © 2024 Joyk Multiservices Group. Tous droits réservés.`,
     },
     Contact: {
       contact: "Contactez-nous",
