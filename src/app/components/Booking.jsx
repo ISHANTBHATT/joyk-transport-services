@@ -520,14 +520,30 @@ function Booking({ bookingData, setBookingData }) {
       </div>
 
       <div className="flex items-center w-full lg:w-auto">
-        <div className="w-full lg:w-auto">
+        <div className="relative w-full lg:w-auto">
           <p className="text-gray-500 text-sm ml-4">{t.Booking.time}</p>
           <input
             // className="custom-time-input appearance-none rounded-lg w-full py-2 px-3 text-gray-400 leading-tight border lg:border-none focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500"
             className="custom-time-input block w-full px-3 py-2 text-gray-400 border lg:border-none rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
+            // style={{
+            //   appearance: "none",
+            //   WebkitAppearance: "none",
+            //   MozAppearance: "textfield",
+            // }}
+            id="time"
+            type="time"
+            name="time"
+            value={bookingData.time || ""}
+            onChange={handleChange}
+            required
+          />
+          {/* <input
+            className={`custom-time-input block w-full px-3 py-2 ${
+              !bookingData.time ? "text-gray-400" : "text-black"
+            } border lg:border-none rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500 sm:text-sm`}
             style={{
-              appearance: "none",
-              WebkitAppearance: "none",
+              appearance: "textfield",
+              WebkitAppearance: "textfield",
               MozAppearance: "textfield",
             }}
             id="time"
@@ -535,9 +551,13 @@ function Booking({ bookingData, setBookingData }) {
             name="time"
             value={bookingData.time || ""}
             onChange={handleChange}
-            placeholder="Enter Pickup time"
             required
-          />
+          /> */}
+          {!bookingData.time && (
+            <span className="absolute left-3 top-2/3 transform -translate-y-1/2 text-gray-400 pointer-events-none">
+              --:--
+            </span>
+          )}
 
           {/* <p className="font-medium">08 AM : 00</p> */}
         </div>
