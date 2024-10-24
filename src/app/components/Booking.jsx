@@ -523,7 +523,7 @@ function Booking({ bookingData, setBookingData }) {
         <div className="relative w-full lg:w-auto">
           <p className="text-gray-500 text-sm ml-4">{t.Booking.time}</p>
           <input
-            className="custom-time-input block appearance-none rounded-lg w-full py-2 px-3 text-gray-400 leading-tight border lg:border-none focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500"
+            className="custom-time-input block rounded-lg w-full py-2 px-3 text-gray-400 leading-tight border lg:border-none focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500"
             // className="custom-time-input block w-full px-3 py-2 text-gray-400 border lg:border-none rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
             id="time"
             type="time"
