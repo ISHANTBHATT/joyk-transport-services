@@ -572,7 +572,7 @@ function Booking({ bookingData, setBookingData }) {
             required
           />
           {!bookingData.time && (
-            <span className="absolute left-3 top-3/4 transform -translate-y-1/2 text-gray-400 pointer-events-none">
+            <span className="absolute left-3 top-2/3 transform -translate-y-1/2 text-gray-400 pointer-events-none">
               --:--
             </span>
           )}
