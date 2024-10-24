@@ -561,6 +561,8 @@ function Booking({ bookingData, setBookingData }) {
               MozAppearance: "textfield",
               width: "100%",
               boxSizing: "border-box",
+              height: "38px",
+              lineHeight: "24px",
             }}
             id="time"
             type="time"
@@ -570,7 +572,7 @@ function Booking({ bookingData, setBookingData }) {
             required
           />
           {!bookingData.time && (
-            <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
+            <span className="absolute left-3 top-3/4 transform -translate-y-1/2 text-gray-400 pointer-events-none">
               --:--
             </span>
           )}
