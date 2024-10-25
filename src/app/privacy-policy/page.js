@@ -52,15 +52,17 @@ function Page() {
           <li>
             <span className="text-test font-semibold">Affiliate </span>
             means an entity that controls, is controlled by or is under common
-            control with a party, where "control" means ownership of 50% or more
-            of the shares, equity interest or other securities entitled to vote
-            for election of directors or other managing authority.
+            control with a party, where &quot;control&quot; means ownership of
+            50% or more of the shares, equity interest or other securities
+            entitled to vote for election of directors or other managing
+            authority.
           </li>
           <li>
             <span className="text-test font-semibold">Company </span>
-            Company (referred to as either "the Company", "We", "Us" or "Our" in
-            this Agreement) refers to Joy K Multiservices, 116 Cite Sonatel Zac
-            Mbao, Dakar-Senegal.
+            Company (referred to as either &quot;the Company&quot;,
+            &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement)
+            refers to Joy K Multiservices, 116 Cite Sonatel Zac Mbao,
+            Dakar-Senegal.
           </li>
           <li>
             <span className="text-test font-semibold">Cookies </span>
@@ -143,7 +145,7 @@ function Page() {
         <p className="text-test font-bold text-xl ">Usage Data</p>
         <p>Usage Data is collected automatically when using the Service.</p>
         <p>
-          Usage Data may include information such as Your Device's Internet
+          Usage Data may include information such as Your Device&apos;s Internet
           Protocol address (e.g. IP address), browser type, browser version, the
           pages of our Service that You visit, the time and date of Your visit,
           the time spent on those pages, unique device identifiers and other
@@ -198,11 +200,11 @@ function Page() {
           </li>
         </ul>
         <p>
-          Cookies can be "Persistent" or "Session" Cookies. Persistent Cookies
-          remain on Your personal computer or mobile device when You go offline,
-          while Session Cookies are deleted as soon as You close Your web
-          browser. You can learn more about cookies on TermsFeed website
-          article.
+          Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies.
+          Persistent Cookies remain on Your personal computer or mobile device
+          when You go offline, while Session Cookies are deleted as soon as You
+          close Your web browser. You can learn more about cookies on TermsFeed
+          website article.
         </p>
         <p>
           We use both Session and Persistent Cookies for the purposes set out
@@ -290,11 +292,11 @@ function Page() {
           <li>
             <span className="text-test font-semibold">To contact You: </span>
             To contact You by email, telephone calls, SMS, or other equivalent
-            forms of electronic communication, such as a mobile application's
-            push notifications regarding updates or informative communications
-            related to the functionalities, products or contracted services,
-            including the security updates, when necessary or reasonable for
-            their implementation.
+            forms of electronic communication, such as a mobile
+            application&apos;s push notifications regarding updates or
+            informative communications related to the functionalities, products
+            or contracted services, including the security updates, when
+            necessary or reasonable for their implementation.
           </li>
           <li>
             <span className="text-test font-semibold">To provide You </span>
@@ -400,12 +402,12 @@ function Page() {
         </p>
         <p>
           Your information, including Personal Data, is processed at the
-          Company's operating offices and in any other places where the parties
-          involved in the processing are located. It means that this information
-          may be transferred to — and maintained on — computers located outside
-          of Your state, province, country or other governmental jurisdiction
-          where the data protection laws may differ than those from Your
-          jurisdiction.
+          Company&apos;s operating offices and in any other places where the
+          parties involved in the processing are located. It means that this
+          information may be transferred to — and maintained on — computers
+          located outside of Your state, province, country or other governmental
+          jurisdiction where the data protection laws may differ than those from
+          Your jurisdiction.
         </p>
         <p>
           Your consent to this Privacy Policy followed by Your submission of
@@ -484,7 +486,7 @@ function Page() {
           acceptable means to protect Your Personal Data, We cannot guarantee
           its absolute security.
         </p>
-        <p className="text-test font-bold text-2xl ">Children's Privacy</p>
+        <p className="text-test font-bold text-2xl ">Children&apos;s Privacy</p>
         <p>
           Our Service does not address anyone under the age of 13. We do not
           knowingly collect personally identifiable information from anyone
@@ -497,7 +499,7 @@ function Page() {
         <p>
           If We need to rely on consent as a legal basis for processing Your
           information and Your country requires consent from a parent, We may
-          require Your parent's consent before We collect and use that
+          require Your parent&apos;s consent before We collect and use that
           information.
         </p>
 
@@ -505,8 +507,8 @@ function Page() {
         <p>
           Our Service may contain links to other websites that are not operated
           by Us. If You click on a third party link, You will be directed to
-          that third party's site. We strongly advise You to review the Privacy
-          Policy of every site You visit.
+          that third party&apos;s site. We strongly advise You to review the
+          Privacy Policy of every site You visit.
         </p>
         <p>
           We have no control over and assume no responsibility for the content,
@@ -522,8 +524,8 @@ function Page() {
         </p>
         <p>
           We will let You know via email and/or a prominent notice on Our
-          Service, prior to the change becoming effective and update the "Last
-          updated" date at the top of this Privacy Policy.
+          Service, prior to the change becoming effective and update the
+          &quot;Last updated&quot; date at the top of this Privacy Policy.
         </p>
         <p>
           You are advised to review this Privacy Policy periodically for any
