@@ -249,7 +249,7 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="relative bg-test2 text-white flex flex-col md:flex-row justify-between gap-8 items-center px-10 sm:px-20 min-h-screen py-10 md:py-0">
+    <div className="relative bg-test2 text-white flex flex-col lg:flex-row justify-between gap-8 items-center px-10 sm:px-20 min-h-screen py-10 lg:py-0">
       <motion.div
         variants={fadeIn("up", 0.3)}
         initial="hidden"
@@ -314,7 +314,7 @@ const Testimonial = () => {
             setHasAnimated(true);
           }
         }}
-        className="w-full flex justify-center md:justify-end z-[1]"
+        className="w-full flex justify-center lg:justify-end z-[1]"
       >
         <div className="relative w-80 sm:w-96 h-80 sm:h-96 ">
           <Image

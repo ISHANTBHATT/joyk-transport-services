@@ -210,7 +210,7 @@ export const translations = {
       call: "Call Our Office",
       terms: "Terms of Service",
       policy: "Privacy Policy",
-      copyright: `Website Developed By <a class="underline" target="_blank" href="https://apacedigitalcargo.com/">Apace Digital Cargo </a> | Copyright © 2024 Joyk Multiservices Group. All rights reserved.`,
+      copyright: `Website Developed By <a class="underline hover:text-primary" target="_blank"  href="https://apacedigitalcargo.com/">Apace Digital Cargo </a> | Copyright © 2024 Joyk Multiservices Group. All rights reserved.`,
     },
     Contact: {
       contact: "Contact Us",
@@ -486,7 +486,7 @@ export const translations = {
       call: "Appelez notre bureau",
       terms: "Politique de confidentialité",
       policy: "Conditions de service",
-      copyright: `Site Web développé par <a class="underline" target="_blank" href="https://apacedigitalcargo.com/">Apace Digital Cargo</a> | Copyright © 2024 Joyk Multiservices Group. Tous droits réservés.`,
+      copyright: `Site Web développé par <a class="underline hover:text-primary" target="_blank" href="https://apacedigitalcargo.com/">Apace Digital Cargo</a> | Copyright © 2024 Joyk Multiservices Group. Tous droits réservés.`,
     },
     Contact: {
       contact: "Contactez-nous",

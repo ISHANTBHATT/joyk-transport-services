@@ -171,14 +171,20 @@ function Footer() {
       </div>
 
       <div className="lg:flex lg:item-center mt-12 border-t-[1px] border-gray-600 pt-2">
-        <ul className="flex flex-wrap gap-4 md:gap-20">
+        <ul className="flex flex-wrap gap-4 lg:gap-20 lg:w-1/2">
           <li>
-            <a href="" className="text-gray-300 hover:text-gray-100 text-sm">
+            <a
+              href="/terms-and-conditions"
+              className="text-gray-300 hover:text-gray-100 text-sm"
+            >
               {t.footer.terms}
             </a>
           </li>
           <li>
-            <a href="" className="text-gray-300 hover:text-gray-100 text-sm">
+            <a
+              href="/privacy-policy"
+              className="text-gray-300 hover:text-gray-100 text-sm"
+            >
               {t.footer.policy}
             </a>
           </li>
@@ -190,7 +196,7 @@ function Footer() {
         </ul>
 
         <p
-          className="text-sm text-gray-300 lg:ml-auto max-lg:mt-6"
+          className="text-sm text-gray-300 lg:ml-auto max-lg:mt-6 text-center lg:w-1/2"
           dangerouslySetInnerHTML={{ __html: t.footer.copyright }}
         >
           {/* {t.footer.copyright} */}
