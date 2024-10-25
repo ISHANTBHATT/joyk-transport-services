@@ -83,10 +83,10 @@ function Page() {
         <p className="text-test font-bold text-4xl ">The use of the Cookiest</p>
         <p className="text-test font-bold text-2xl ">Type of Cookies We Use</p>
         <p>
-          Cookies can be "Persistent" or "Session" Cookies. Persistent Cookies
-          remain on your personal computer or mobile device when You go offline,
-          while Session Cookies are deleted as soon as You close your web
-          browser.
+          Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies.
+          Persistent Cookies remain on your personal computer or mobile device
+          when You go offline, while Session Cookies are deleted as soon as You
+          close your web browser.
         </p>
         <p>
           We use both session and persistent Cookies for the purposes set out
@@ -141,8 +141,9 @@ function Page() {
           function properly.
         </p>
         <p>
-          If You'd like to delete Cookies or instruct your web browser to delete
-          or refuse Cookies, please visit the help pages of your web browser.
+          If You&apos;d like to delete Cookies or instruct your web browser to
+          delete or refuse Cookies, please visit the help pages of your web
+          browser.
         </p>
         <ul className="mx-8 space-y-5 list-disc">
           <li>
@@ -192,8 +193,8 @@ function Page() {
           </li>
         </ul>
         <p>
-          For any other web browser, please visit your web browser's official
-          web pages.
+          For any other web browser, please visit your web browser&apos;s
+          official web pages.
         </p>
         <p className="text-test font-bold text-2xl ">
           More Information about Cookies
