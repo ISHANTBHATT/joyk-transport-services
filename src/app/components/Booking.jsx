@@ -554,7 +554,7 @@ function Booking({ bookingData, setBookingData }) {
             </span>
           )} */}
           <input
-            className="custom-time-input block w-full px-3 py-2 h-10 text-gray-700 border lg:border-none rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
+            className="custom-time-input appearance-none w-full px-3 py-2 h-10 text-gray-700 border lg:border-none rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
             // style={{
             //   appearance: "none",
             //   WebkitAppearance: "none",
