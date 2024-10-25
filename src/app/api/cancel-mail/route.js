@@ -25,7 +25,6 @@ export async function POST(request) {
       from: email,
       to: email,
       subject: "Booking Cancel",
-      // text: `Hello ${userName},\n\nYour booking details are sent to the company. When it gets confirmed, you will be notified.\n\nBooking Details:\nPickup: ${booking.pickup}\nDropoff: ${booking.dropoff}\nPassengers: ${booking.passengers}\nCars: ${booking.cars}\nDate: ${formattedDate}\nTime: ${booking.time}\nPrice: $${booking.price} ${returnDate} \n\nThank you for booking with us!`,
       html: `<p>Dear Admin,</p>
       <p>${userName}, Cancel the ride.</p>
       <p><strong>User Information:</strong></p>

@@ -17,9 +17,6 @@ export async function GET(request) {
   await dbConnect();
 
   try {
-    // const bookings = await Booking.find({ userId: session.user.id }).sort({
-    //   date: -1,
-    // });
     const bookings = await Booking.find({ userId: session.user.id });
     return NextResponse.json({ success: true, bookings: bookings.reverse() });
   } catch (error) {
