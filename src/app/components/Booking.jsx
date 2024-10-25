@@ -554,16 +554,16 @@ function Booking({ bookingData, setBookingData }) {
             </span>
           )} */}
           <input
-            className="custom-time-input block w-full px-3 py-2 text-gray-700 border lg:border-none rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
-            style={{
-              appearance: "none",
-              WebkitAppearance: "none",
-              MozAppearance: "textfield",
-              width: "100%",
-              boxSizing: "border-box",
-              height: "38px",
-              lineHeight: "24px",
-            }}
+            className="custom-time-input block w-full px-3 py-2 h-10 text-gray-700 border lg:border-none rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
+            // style={{
+            //   appearance: "none",
+            //   WebkitAppearance: "none",
+            //   MozAppearance: "textfield",
+            //   width: "100%",
+            //   boxSizing: "border-box",
+            //   height: "38px",
+            //   lineHeight: "24px",
+            // }}
             id="time"
             type="time"
             name="time"
@@ -572,7 +572,7 @@ function Booking({ bookingData, setBookingData }) {
             required
           />
           {!bookingData.time && (
-            <span className="absolute left-3 top-2/3 transform -translate-y-1/2 text-gray-400 pointer-events-none">
+            <span className="sm:hidden absolute left-3 top-[66%] transform -translate-y-1/2 text-gray-400 pointer-events-none">
               --:--
             </span>
           )}

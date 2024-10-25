@@ -810,6 +810,8 @@ import { ClipLoader } from "react-spinners";
 import { MdAirlineSeatReclineNormal, MdFlight } from "react-icons/md";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../translations";
+import { RxClock } from "react-icons/rx";
+import { FaRegCalendar } from "react-icons/fa";
 
 export default function Component() {
   const { language, changeLanguage } = useLanguage();
@@ -1128,26 +1130,41 @@ export default function Component() {
                       >
                         {t.Booking.return}
                       </label>
-                      <input
-                        className="shadow appearance-none border rounded w-full h-10 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="returnDate"
-                        type="date"
-                        name="returnDate"
-                        value={formatDateForInput(bookingData.returnDate)}
-                        // value={bookingData.returnDate}
-                        onChange={handleChange}
-                        min={formatDateTimeLocal(bookingData.date)}
-                        required
-                      />
-                      <input
-                        className="mt-4 shadow appearance-none border rounded w-full h-10 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="returnTime"
-                        type="time"
-                        name="returnTime"
-                        value={bookingData.returnTime}
-                        onChange={handleChange}
-                        required
-                      />
+                      <div className="relative w-full">
+                        <input
+                          className="mt-4 shadow appearance-none border rounded w-full h-10 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                          id="returnDate"
+                          type="date"
+                          name="returnDate"
+                          value={formatDateForInput(bookingData.returnDate)}
+                          // value={bookingData.returnDate}
+                          onChange={handleChange}
+                          min={formatDateTimeLocal(bookingData.date)}
+                          required
+                        />
+                        {!bookingData.time && (
+                          <span className="sm:hidden absolute right-4 top-[64%] transform -translate-y-1/2 text-gray-900 pointer-events-none">
+                            <FaRegCalendar className="text-sm" />
+                          </span>
+                        )}
+                      </div>
+
+                      <div className="relative w-full">
+                        <input
+                          className="mt-4 shadow appearance-none border rounded w-full h-10 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                          id="returnTime"
+                          type="time"
+                          name="returnTime"
+                          value={bookingData.returnTime}
+                          onChange={handleChange}
+                          required
+                        />
+                        {!bookingData.time && (
+                          <span className="sm:hidden absolute right-4 top-[64%] transform -translate-y-1/2 text-gray-900 pointer-events-none">
+                            <RxClock />
+                          </span>
+                        )}
+                      </div>
                     </div>
                   )}
                 </div>
