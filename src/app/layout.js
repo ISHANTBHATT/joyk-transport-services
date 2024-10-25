@@ -128,6 +128,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { AuthProvider } from "./providers";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import CookieConsentPopup from "./components/CookieConsent";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -156,6 +157,7 @@ export default function RootLayout({ children }) {
             <Navbar />
             {children}
             <Footer />
+            <CookieConsentPopup />
           </LanguageProvider>
         </AuthProvider>
       </body>
