@@ -1129,7 +1129,7 @@ export default function Component() {
                         {t.Booking.return}
                       </label>
                       <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="shadow appearance-none border rounded w-full h-10 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         id="returnDate"
                         type="date"
                         name="returnDate"
@@ -1140,7 +1140,7 @@ export default function Component() {
                         required
                       />
                       <input
-                        className="mt-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="mt-4 shadow appearance-none border rounded w-full h-10 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         id="returnTime"
                         type="time"
                         name="returnTime"
