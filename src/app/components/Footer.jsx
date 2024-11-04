@@ -152,17 +152,23 @@ function Footer() {
         >
           <ul className="flex  mt-8 space-x-4">
             <li className="hover:bg-[#343538] h-10 w-10 rounded-full flex items-center justify-center shrink-0 hover:-translate-y-1 transition-transform duration-300">
-              <a href="">
+              <a
+                href="https://www.facebook.com/profile.php?id=61567159722679"
+                target="_blank"
+              >
                 <FaFacebookF className="text-white " />
               </a>
             </li>
             <li className="hover:bg-[#343538] h-10 w-10 rounded-full flex items-center justify-center shrink-0 hover:-translate-y-1 transition-transform duration-300">
-              <a href="">
+              <a
+                href="https://www.linkedin.com/company/joyk-multiservices-group/"
+                target="_blank"
+              >
                 <FaLinkedinIn className="text-white" />
               </a>
             </li>
             <li className="hover:bg-[#343538] h-10 w-10 rounded-full flex items-center justify-center shrink-0 hover:-translate-y-1 transition-transform duration-300">
-              <a href="">
+              <a href="" target="_blank">
                 <FaInstagram className="text-white" />
               </a>
             </li>
