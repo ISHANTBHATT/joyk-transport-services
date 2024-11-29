@@ -62,7 +62,7 @@ export async function POST(request) {
     const survey = await Survey.create({ ...body, userId: session.user.id });
     return NextResponse.json({ success: true, data: survey }, { status: 201 });
   } catch (error) {
-    console.error("Error submitting survey:", error);
+    // console.error("Error submitting survey:", error);
     return NextResponse.json(
       { success: false, message: "Failed to submit survey" },
       { status: 500 }

@@ -288,7 +288,7 @@ function Page() {
       }
     } catch (error) {
       setError("An error occurred while sending verification email");
-      console.error("Verification email error:", error);
+      // console.error("Verification email error:", error);
     }
     setIsloading(false);
   };
@@ -296,7 +296,7 @@ function Page() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-    console.log("Form submitted");
+    // console.log("Form submitted");
     // console.log(typeof verificationCode);
     // console.log(typeof expectedVerificationCode);
     if (!verificationSent) {
@@ -305,7 +305,7 @@ function Page() {
     }
 
     if (String(verificationCode) !== String(expectedVerificationCode)) {
-      console.log("run");
+      // console.log("run");
       setError("Invalid verification code");
       return;
     }
@@ -339,11 +339,11 @@ function Page() {
         });
       } else {
         setError(data.message || "Registration failed");
-        console.error("Registration error:", data);
+        // console.error("Registration error:", data);
       }
     } catch (error) {
       setError("An error occurred during registration");
-      console.error("Registration error:", error);
+      // console.error("Registration error:", error);
     }
     setIsloading(false);
   };

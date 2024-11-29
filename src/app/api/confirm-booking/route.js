@@ -133,7 +133,7 @@ export async function GET(request) {
       headers: { "Content-Type": "text/html" },
     });
   } catch (error) {
-    console.error("Error confirming booking:", error);
+    // console.error("Error confirming booking:", error);
     return new Response("Failed to confirm booking", { status: 500 });
   }
 }

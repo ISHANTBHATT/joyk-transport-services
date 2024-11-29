@@ -20,7 +20,7 @@ export async function GET(request) {
     const bookings = await Booking.find({ userId: session.user.id });
     return NextResponse.json({ success: true, bookings: bookings.reverse() });
   } catch (error) {
-    console.error("Error fetching bookings:", error);
+    // console.error("Error fetching bookings:", error);
     return NextResponse.json(
       { success: false, message: "Failed to fetch bookings" },
       { status: 500 }
@@ -45,7 +45,7 @@ export async function POST(request) {
     const booking = await Booking.create({ ...body, userId: session.user.id });
     return NextResponse.json({ success: true, data: booking }, { status: 201 });
   } catch (error) {
-    console.error("Error creating booking:", error);
+    // console.error("Error creating booking:", error);
     return NextResponse.json(
       { success: false, message: "Failed to create booking" },
       { status: 500 }

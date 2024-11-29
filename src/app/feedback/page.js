@@ -222,7 +222,7 @@ export default function TaxiSurvey() {
         );
       }
     } catch (error) {
-      console.error("Error:", error);
+      // console.error("Error:", error);
       setSubmitMessage("An error occurred. Please try again.");
     } finally {
       setIsSubmitting(false);

@@ -30,7 +30,7 @@ function Delete() {
           setError("Failed to fetch booking details");
         }
       } catch (error) {
-        console.error("Error fetching booking details:", error);
+        // console.error("Error fetching booking details:", error);
         setError("An error occurred while fetching booking details");
       } finally {
         setIsLoading(false);
@@ -71,7 +71,7 @@ function Delete() {
         console.error("Failed to delete booking");
       }
     } catch (error) {
-      console.error("Error deleting booking:", error);
+      // console.error("Error deleting booking:", error);
       setError("An error occurred while deleting the booking");
     }
     setDeleteLoading(false);
